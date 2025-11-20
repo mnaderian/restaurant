@@ -44,7 +44,9 @@
                     <ul class="flex flex-col mb-4 lg:mb-6">
                         <x-home.item>جهت ثبت نام از بخش <x-home.item-link route="{{ route('register') }}" text="اقدام" /> کنید.</x-home.item>
                         <x-home.item>مناسب برای مدیران رستوران ها</x-home.item>
-                        
+                        <x-home.item>براحتی و بصورت آنلاین رزرو کنید</x-home.item>
+                        <x-home.item>جستجوی رستوران ها با فیلتر دلخواه</x-home.item>
+                        <x-home.item>به رستوران محبوب خود امتیاز دهید.</x-home.item>
                     </ul>
                     <ul class="flex gap-3 text-sm leading-normal">
                         <li><x-home.button link="{{ route('login') }}" text="ورود کاربران" /></li>
