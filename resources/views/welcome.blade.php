@@ -42,7 +42,7 @@
                     <h1 class="mb-1 font-black text-2xl">سیستم مدیریت رستوران</h1>
                     <p class="mb-7 text-[#706f6c] dark:text-[#A1A09A]">سیستمی برای مدیریت رستوران و رزرو آنلاین</p>
                     <ul class="flex flex-col mb-4 lg:mb-6">
-                        <x-home.item>جهت ثبت نام از بخش <x-home.item-link route="{{ route('register') }}" text="اقدام" /> کنید.</x-home.item>
+                        <x-home.item>جهت ثبت نام از این بخش <x-home.item-link route="{{ route('register') }}" text="اقدام" /> کنید.</x-home.item>
                         <x-home.item>مناسب برای مدیران رستوران ها</x-home.item>
                         <x-home.item>براحتی و بصورت آنلاین رزرو کنید</x-home.item>
                         <x-home.item>جستجوی رستوران ها با فیلتر دلخواه</x-home.item>
