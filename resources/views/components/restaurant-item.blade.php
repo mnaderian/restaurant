@@ -1,10 +1,8 @@
 @props([
-    'featured' => false,
     'image' => Vite::asset('resources/img/sample.jpg'),
+    'name' => 'رستوران',
+    'address' => '',
     'stars' => 1,
-    'comments' => 0,
-    'name' => 'نام رستوران',
-    'description' => '',
     'tables' => 0,
     'url' => '#',
 ])
@@ -12,11 +10,6 @@
 <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all group">
     <div class="relative overflow-hidden">
         <img src="{{ $image }}" alt="Gourmet Burger" class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500" />
-        @if ($featured)
-            <div class="absolute top-4 left-4">
-                <span class="bg-amber-500 text-white px-3 py-1 rounded-full text-sm font-medium">ویژه</span>
-            </div>
-        @endif
     </div>
     <div class="p-6">
         <div class="flex items-center mb-2">
@@ -27,11 +20,10 @@
                     </svg>
                 @endfor
             </div>
-            <span class="text-gray-600 text-sm ms-2">({{ $comments }} نظر)</span>
         </div>
         <h3 class="text-xl font-bold mb-2">{{ $name }}</h3>
-        @isset($description)
-            <p class="text-gray-600 mb-4">{{ $description }}</p>
+        @isset($address)
+            <p class="text-gray-600 mb-4 text-sm">{{ $address }}</p>
         @endisset
         <div class="flex items-center justify-between">
             <span class="text-2xl font-bold text-green-500">{{ $tables }} میز</span>
