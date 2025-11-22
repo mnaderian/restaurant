@@ -16,7 +16,9 @@
             </ul>
         </div>
         <div class="relative bg-[#fff2f2] dark:bg-[#1D0002] lg:-ms-px -mb-px lg:mb-0 rounded-t-lg lg:rounded-t-none lg:rounded-e-lg! aspect-[335/376] lg:aspect-auto w-full lg:w-[438px] shrink-0 overflow-hidden">
-            <a href="{{ route('restaurants') }}" class="absolute bg-gradient-to-t from-red-700 to-white/0 text-white font-bold text-center flex items-end place-content-center pb-12 text-2xl shadow h-1/2 hover:from-red-600 hover:text-amber-100 inset-x-0 bottom-0 z-10">نمایش لیست رستوران ها</a>
+            <a href="{{ route('restaurants') }}" class="absolute bg-gradient-to-t from-red-700 to-white/0 text-white font-medium text-center flex items-end place-content-center pb-12 text-xl shadow h-1/2 hover:from-red-600 inset-x-0 bottom-0 z-10">
+                <span class="bg-white/35 rounded-full px-6 py-2 shadow-lg">نمایش لیست رستوران ها</span>
+            </a>
             <img src="{{ Vite::asset('resources/img/restaurant.jpg') }}" class="size-full object-cover" />
             <div class="absolute inset-0 rounded-t-lg lg:rounded-t-none lg:rounded-e-lg shadow-[inset_0px_0px_0px_1px_rgba(26,26,0,0.16)] dark:shadow-[inset_0px_0px_0px_1px_#fffaed2d]"></div>
         </div>
