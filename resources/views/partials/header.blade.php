@@ -1,17 +1,21 @@
-<header class="w-full lg:max-w-4xl max-w-[335px] text-sm mb-6 not-has-[nav]:hidden">
+<header class="w-full text-sm mb-6 not-has-[nav]:hidden shadow-lg fixed z-20 bg-red-500 text-white py-1 px-5 flex justify-between">
+    <a href="{{ route('home') }}" class="flex items-center gap-x-2 font-semibold text-lg">
+        <img class="size-8" src="{{ Vite::asset('resources/svg/logo-white.svg') }}" />
+        <h3>سیستم مدیریت رستوران</h3>
+    </a>
     @if (Route::has('login'))
         <nav class="flex items-center justify-end gap-4">
             @auth
-                <a href="{{ url('/dashboard') }}" class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] border-[#19140035] hover:border-[#1915014a] border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm text-sm leading-normal">
+                <a href="{{ url('/dashboard') }}" class="inline-block px-5 py-1 text-sm leading-normal bg-stone-50/35 rounded-full hover:bg-stone-100/50">
                     {{ __('dashboard') }}
                 </a>
             @else
-                <a href="{{ route('login') }}" class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] text-[#1b1b18] border border-transparent hover:border-[#19140035] dark:hover:border-[#3E3E3A] rounded-sm text-sm leading-normal">
+                <a href="{{ route('login') }}" class="inline-block px-5 py-1 text-sm leading-normal bg-stone-50/35 rounded-full hover:bg-stone-100/50">
                     {{ __('log in') }}
                 </a>
 
                 @if (Route::has('register'))
-                    <a href="{{ route('register') }}" class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] border-[#19140035] hover:border-[#1915014a] border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm text-sm leading-normal">{{ __('Register') }}</a>
+                    <a href="{{ route('register') }}" class="inline-block px-5 py-1 text-sm leading-normal bg-stone-50/35 rounded-full hover:bg-stone-100/50">{{ __('register') }}</a>
                 @endif
             @endauth
         </nav>
