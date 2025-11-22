@@ -9,6 +9,8 @@ use Laravel\Fortify\Features;
 
 Route::view('/', 'home')->name('home');
 
+Route::view('restaurants', 'restaurants')->name('restaurants');
+
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
