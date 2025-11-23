@@ -1,8 +1,8 @@
 <div class="flex items-center justify-center w-full lg:grow">
     <main class="flex max-w-[335px] w-full flex-col-reverse lg:max-w-4xl lg:flex-row">
         <div class="text-[13px] leading-[20px] flex-1 p-6 pb-12 lg:p-20 bg-white dark:bg-[#161615] dark:text-[#EDEDEC] shadow-[inset_0px_0px_0px_1px_rgba(26,26,0,0.16)] dark:shadow-[inset_0px_0px_0px_1px_#fffaed2d] rounded-es-lg rounded-ee-lg lg:rounded-ss-lg lg:rounded-ee-none">
-            <h1 class="mb-1 font-black text-2xl">سیستم مدیریت رستوران</h1>
-            <p class="mb-7 text-[#706f6c] dark:text-[#A1A09A]">سیستمی برای مدیریت رستوران و رزرو آنلاین</p>
+            <h1 class="mb-3 font-black text-lg">سیستم رزرواسیون آنلاین برای رستوران ها</h1>
+            <p class="mb-7 text-[#706f6c] dark:text-[#A1A09A] p-3 border-2 border-dashed rounded-lg leading-loose">پلتفرمی که به کاربران این امکان را می دهد که به صورت آنلاین برای میز در رستوران ها رزرو انجام دهند.</p>
             <ul class="flex flex-col mb-4 lg:mb-6">
                 <x-home.item>جهت ثبت نام از این بخش <x-home.item-link route="{{ route('register') }}" text="اقدام" /> کنید.</x-home.item>
                 <x-home.item>مناسب برای مدیران رستوران ها</x-home.item>

@@ -1,7 +1,7 @@
 <header class="w-full text-sm mb-6 not-has-[nav]:hidden shadow-lg fixed z-30 top-0 bg-red-500 text-white py-1 px-5 flex justify-between">
     <a href="{{ route('home') }}" class="flex items-center gap-x-2 font-semibold text-lg hover:text-amber-200">
         <img class="size-8" src="{{ Vite::asset('resources/svg/logo-white.svg') }}" />
-        <h3>سیستم مدیریت رستوران</h3>
+        <h3>سیستم رزرواسیون آنلاین</h3>
     </a>
     <nav class="flex items-center justify-end gap-4">
         <a href="{{ route('home') }}" class="hover:text-amber-200">
