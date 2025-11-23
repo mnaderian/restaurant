@@ -65,7 +65,7 @@ return [
     'gte' => [
         'array' => ':attribute باید حداقل :value آیتم یا بیشتر باشد.',
         'file' => ':attribute باید بزرگتر یا مساوی با :value کیلوبایت باشد.',
-        'numeric' => ':attribute باید بزگتر یا مساوی با :value باشد',
+        'numeric' => ':attribute باید بزرگتر یا مساوی با :value باشد',
         'string' => ':attribute باید بیشتر یا مساوی با :value کاراکتر باشد.',
     ],
     'hex_color' => 'مقدار فیلد :attribute باید برابر با یک کد رنگ معتبر باشد.',
@@ -94,8 +94,8 @@ return [
     'mac_address' => 'مقدار فیلد :attribute باید یک آدرس MAC معتبر باشد.',
     'max' => [
         'array' => ':attribute نباید بیشتر از :max آیتم باشد.',
-        'file' => ':attribute نباید بزگتر از :max کیلوبایت باشد.',
-        'numeric' => ':attribute نباید بزگتر از :max باشد',
+        'file' => ':attribute نباید بزرگتر از :max کیلوبایت باشد.',
+        'numeric' => ':attribute نباید بزرگتر از :max رقم باشد',
         'string' => ':attribute نباید بیشتر از :max کارکتر باشد.',
     ],
     'max_digits' => 'تعداد کاراکترهای فیلد :attribute نباید بیشتر از :max حرف باشد.',
@@ -204,7 +204,7 @@ return [
         'country' => 'کشور',
         'address' => 'نشانی',
         'phone' => 'تلفن',
-        'mobile' => 'شماره موبایل',
+        'mobile' => 'شماره تلفن',
         'message' => 'پیام',
         'codemelli' => 'کدملی',
         'age' => 'سن',

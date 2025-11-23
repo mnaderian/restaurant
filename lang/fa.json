@@ -1,6 +1,7 @@
 {
     "Email": "ایمیل",
-    "Mobile": "موبایل",
+    "Mobile": "شماره تلفن",
+    "mobile": "شماره تلفن",
     "Password": "رمز عبور",
     "Remember me": "مرا بخاطر بسپار",
     "Forgot your password?": "رمز عبورتان را فراموش کرده‌اید؟",

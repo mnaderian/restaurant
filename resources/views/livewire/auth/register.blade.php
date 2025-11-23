@@ -19,6 +19,16 @@
                 :placeholder="__('Full name')"
             />
 
+            <!-- Mobile Number -->
+            <flux:input
+                name="mobile"
+                :label="__('mobile')"
+                type="text"
+                required
+                autocomplete="mobile"
+                placeholder="09161234567"
+            />
+
             <!-- Email Address -->
             <flux:input
                 name="email"
