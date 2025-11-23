@@ -36,7 +36,13 @@ class Profile extends Component
         $validated = $this->validate([
             'name' => ['required', 'string', 'max:255'],
 
-            'mobile' => ['required', 'min:4', 'max_digits:11', 'numeric'],
+            'mobile' => [
+                'required', 
+                'min:4', 
+                'max_digits:11', 
+                'numeric',
+                Rule::unique(User::class)->ignore($user->id),
+            ],
 
             'email' => [
                 'required',
