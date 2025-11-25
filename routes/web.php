@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RestaurantController;
 use App\Livewire\Settings\Appearance;
 use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Profile;
@@ -9,7 +10,7 @@ use Laravel\Fortify\Features;
 
 Route::view('/', 'home')->name('home');
 
-Route::view('restaurants', 'restaurants')->name('restaurants');
+Route::get('restaurants', [RestaurantController::class, 'index'])->name('restaurants');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])

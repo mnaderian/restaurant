@@ -12,7 +12,15 @@
 
         <!-- restaurants -->
         <div class="grid grid-cols-4 gap-x-7 gap-y-10">
-            {{-- لیست رستوران ها --}}
+            @foreach ($restaurants as $restaurant)
+                <x-restaurant-item 
+                    name="{{ $restaurant->name }}"
+                    address="{{ $restaurant->address }}"
+                    points="{{ $restaurant->points }}"
+                    image="{{ $restaurant->image }}"
+                />
+            @endforeach
+            {{ $restaurants->links() }}
         </div>
     </main>
 @endsection
