@@ -9,4 +9,16 @@ class Restaurant extends Model
 {
     /** @use HasFactory<\Database\Factories\RestaurantFactory> */
     use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'food_type',
+        'address',
+        'external_environment',
+        'internal_environment',
+        'points',
+        'image',
+        'phone',
+        'services',
+    ];
 }
