@@ -96,6 +96,15 @@
     }
 }
 
+@layer components {
+    .input {
+        @apply bg-white border border-gray-200 rounded-lg py-1 px-2;
+    }
+    .submit {
+        @apply bg-red-700 text-white rounded-xl font-medium py-1 px-3 mr-5 hover:bg-red-600;
+    }
+}
+
 [data-flux-field]:not(ui-radio, ui-checkbox) {
     @apply grid gap-2;
 }

@@ -13,6 +13,7 @@ Route::view('/', 'home')->name('home');
 Route::prefix('restaurants')->controller(RestaurantController::class)->group(function () {
     Route::get('/', 'index')->name('restaurants');
     Route::post('search', 'search')->name('search');
+    Route::post('filter', 'filter')->name('filter');
 });
 
 Route::view('dashboard', 'dashboard')

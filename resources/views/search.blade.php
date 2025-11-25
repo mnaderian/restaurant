@@ -10,9 +10,11 @@
             <p class="text-lg text-gray-400">در این بخش می توانید لیست رستوران ها را مشاهده و جستجو نمایید</p>
         </div>
 
-        <!-- فرم جستجو -->
-        <div class="bg-stone-100 w-full h-15 rounded-xl grid place-content-center">
+        <!-- جستجو و فیلتر -->
+        <div class="mb-12 bg-stone-100 w-full rounded-xl grid place-content-center py-3">
             <x-search />
+            <hr class="my-3 border-dashed border border-stone-300" />
+            <x-filter />
         </div>
 
         <!-- تعداد نتایج جسجتو -->

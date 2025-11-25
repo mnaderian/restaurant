@@ -33,6 +33,29 @@ class RestaurantController extends Controller
         ]);
     }
 
+    public function filter(Request $request)
+    {
+        $points = $request->input('points');
+        $price = $request->input('price');
+        $foodType = $request->input('food_type');
+        $externalEnvironment = $request->input('external_environment');
+        $internalEnvironment = $request->input('external_environment');
+
+        $results = collect(
+            Restaurant::orWhere('points', $points)
+                ->orWhere('food_type', $foodType)
+                ->orWhere('external_environment', $externalEnvironment)
+                ->orWhere('internal_environment', $internalEnvironment)
+                ->get()
+        );
+        $resultsCount = $results->count();
+
+        return view('search', [
+            'restaurants' => $results,
+            'resultsCount' => $resultsCount,
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      */
