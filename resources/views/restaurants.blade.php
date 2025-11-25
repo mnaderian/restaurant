@@ -20,6 +20,8 @@
                     image="{{ $restaurant->image }}"
                 />
             @endforeach
+        </div>
+        <div class="mx-auto grid place-items-center mt-10">
             {{ $restaurants->links() }}
         </div>
     </main>
