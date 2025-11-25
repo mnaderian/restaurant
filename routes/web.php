@@ -10,7 +10,10 @@ use Laravel\Fortify\Features;
 
 Route::view('/', 'home')->name('home');
 
-Route::get('restaurants', [RestaurantController::class, 'index'])->name('restaurants');
+Route::prefix('restaurants')->controller(RestaurantController::class)->group(function () {
+    Route::get('/', 'index')->name('restaurants');
+    Route::post('search', 'search')->name('search');
+});
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])

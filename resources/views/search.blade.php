@@ -11,12 +11,18 @@
         </div>
 
         <!-- فرم جستجو -->
-        <div class="mb-12 bg-stone-100 w-full h-15 rounded-xl grid place-content-center">
+        <div class="bg-stone-100 w-full h-15 rounded-xl grid place-content-center">
             <x-search />
         </div>
 
+        <!-- تعداد نتایج جسجتو -->
+        <div class="mt-5 mx-auto w-60 py-2 px-5 rounded-full bg-emerald-600 flex items-center gap-3 place-content-center shadow-lg">
+            <span class="text-white">تعداد نتایج جستجو: </span>
+            <span class="font-bold text-amber-200">{{ $resultsCount }}</span>
+        </div>
+
         <!-- لیست رستوران ها -->
-        <div class="grid grid-cols-4 gap-x-7 gap-y-10">
+        <div class="mt-12 grid grid-cols-4 gap-x-7 gap-y-10">
             @foreach ($restaurants as $restaurant)
                 <x-restaurant-item 
                     name="{{ $restaurant->name }}"
@@ -25,9 +31,6 @@
                     image="{{ $restaurant->image }}"
                 />
             @endforeach
-        </div>
-        <div class="mx-auto grid place-items-center mt-10">
-            {{ $restaurants->links() }}
         </div>
     </main>
 @endsection

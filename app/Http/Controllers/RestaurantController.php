@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Restaurant;
 use App\Http\Requests\StoreRestaurantRequest;
 use App\Http\Requests\UpdateRestaurantRequest;
+use Illuminate\Http\Request;
 
 class RestaurantController extends Controller
 {
@@ -16,6 +17,20 @@ class RestaurantController extends Controller
         $restaurants = Restaurant::paginate(8);
 
         return view('restaurants', ['restaurants' => $restaurants]);
+    }
+
+    public function search(Request $request)
+    {
+        $keywords = $request->input('keywords');
+        $type = $request->input('type');
+
+        $results = collect(Restaurant::whereLike($type, "%$keywords%")->get());
+        $resultsCount = $results->count();
+
+        return view('search', [
+            'restaurants' => $results,
+            'resultsCount' => $resultsCount,
+        ]);
     }
 
     /**
