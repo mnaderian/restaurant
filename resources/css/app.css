@@ -42,49 +42,57 @@
 
     /* Vazirmatn Font */
     @font-face {
-    font-family: "vazir";
-    src: url("../fonts/vazirmatn/Vazirmatn-Thin.woff2") format("woff2");
-    font-weight: 100;
+        font-family: "vazir";
+        src: url("../fonts/vazirmatn/Vazirmatn-Thin.woff2") format("woff2");
+        font-weight: 100;
     }
+
     @font-face {
-    font-family: "vazir";
-    src: url("../fonts/vazirmatn/Vazirmatn-ExtraLight.woff2") format("woff2");
-    font-weight: 200;
+        font-family: "vazir";
+        src: url("../fonts/vazirmatn/Vazirmatn-ExtraLight.woff2") format("woff2");
+        font-weight: 200;
     }
+
     @font-face {
-    font-family: "vazir";
-    src: url("../fonts/vazirmatn/Vazirmatn-Light.woff2") format("woff2");
-    font-weight: 300;
+        font-family: "vazir";
+        src: url("../fonts/vazirmatn/Vazirmatn-Light.woff2") format("woff2");
+        font-weight: 300;
     }
+
     @font-face {
-    font-family: "vazir";
-    src: url("../fonts/vazirmatn/Vazirmatn-Regular.woff2") format("woff2");
-    font-weight: 400;
+        font-family: "vazir";
+        src: url("../fonts/vazirmatn/Vazirmatn-Regular.woff2") format("woff2");
+        font-weight: 400;
     }
+
     @font-face {
-    font-family: "vazir";
-    src: url("../fonts/vazirmatn/Vazirmatn-Medium.woff2") format("woff2");
-    font-weight: 500;
+        font-family: "vazir";
+        src: url("../fonts/vazirmatn/Vazirmatn-Medium.woff2") format("woff2");
+        font-weight: 500;
     }
+
     @font-face {
-    font-family: "vazir";
-    src: url("../fonts/vazirmatn/Vazirmatn-SemiBold.woff2") format("woff2");
-    font-weight: 600;
+        font-family: "vazir";
+        src: url("../fonts/vazirmatn/Vazirmatn-SemiBold.woff2") format("woff2");
+        font-weight: 600;
     }
+
     @font-face {
-    font-family: "vazir";
-    src: url("../fonts/vazirmatn/Vazirmatn-Bold.woff2") format("woff2");
-    font-weight: 700;
+        font-family: "vazir";
+        src: url("../fonts/vazirmatn/Vazirmatn-Bold.woff2") format("woff2");
+        font-weight: 700;
     }
+
     @font-face {
-    font-family: "vazir";
-    src: url("../fonts/vazirmatn/Vazirmatn-ExtraBold.woff2") format("woff2");
-    font-weight: 800;
+        font-family: "vazir";
+        src: url("../fonts/vazirmatn/Vazirmatn-ExtraBold.woff2") format("woff2");
+        font-weight: 800;
     }
+
     @font-face {
-    font-family: "vazir";
-    src: url("../fonts/vazirmatn/Vazirmatn-Black.woff2") format("woff2");
-    font-weight: 900;
+        font-family: "vazir";
+        src: url("../fonts/vazirmatn/Vazirmatn-Black.woff2") format("woff2");
+        font-weight: 900;
     }
 
     *,
@@ -100,6 +108,7 @@
     .input {
         @apply bg-white border border-gray-200 rounded-lg py-1 px-2;
     }
+
     .submit {
         @apply bg-red-700 text-white rounded-xl font-medium py-1 px-3 mr-5 hover:bg-red-600;
     }
@@ -110,7 +119,7 @@
 }
 
 [data-flux-label] {
-    @apply  !mb-0 !leading-tight;
+    @apply !mb-0 !leading-tight;
 }
 
 input:focus[data-flux-control],
