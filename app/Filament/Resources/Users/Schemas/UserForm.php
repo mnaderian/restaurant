@@ -25,6 +25,7 @@ class UserForm
                     ->email()
                     ->required(),
                 DateTimePicker::make('email_verified_at')
+                    ->jalali()
                     ->label('تاریخ تأیید ایمیل'),
                 TextInput::make('password')
                     ->label('رمز عبور')
