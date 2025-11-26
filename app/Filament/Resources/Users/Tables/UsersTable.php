@@ -20,28 +20,21 @@ class UsersTable
                     ->searchable(),
                 TextColumn::make('mobile')
                     ->label('شماره تلفن')
-                    ->searchable(),
+                    ->searchable()
+                    ->toggleable(),
                 TextColumn::make('email')
                     ->label('ایمیل')
-                    ->searchable(),
-                // TextColumn::make('email_verified_at')
-                //     ->dateTime()
-                //     ->sortable(),
-                // TextColumn::make('two_factor_confirmed_at')
-                //     ->dateTime()
-                //     ->sortable(),
-                IconColumn::make('is_admin')
-                    ->label('ادمین')
-                    ->boolean(),
+                    ->searchable()
+                    ->toggleable(),
                 TextColumn::make('created_at')
                     ->label('تاریخ ایجاد')
-                    ->dateTime()
+                    ->jalaliDateTime('j F Y, H:i')
                     ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                // TextColumn::make('updated_at')
-                //     ->dateTime()
-                //     ->sortable()
-                //     ->toggleable(isToggledHiddenByDefault: true),
+                    ->toggleable(isToggledHiddenByDefault: false),
+                IconColumn::make('is_admin')
+                    ->label('ادمین')
+                    ->boolean()
+                    ->toggleable(),
             ])
             ->filters([
                 //
