@@ -7,6 +7,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Schema;
+use Illuminate\Support\Facades\Hash;
 
 class UserForm
 {
@@ -30,7 +31,10 @@ class UserForm
                 TextInput::make('password')
                     ->label('رمز عبور')
                     ->password()
-                    ->required(),
+                    ->required(fn (string $context): bool => $context === 'create')
+                    ->revealable()
+                    ->dehydrateStateUsing(fn ($state) => Hash::make($state))
+                    ->dehydrated(fn ($state) => filled($state)),
                 Toggle::make('is_admin')
                     ->label('ادمین')
                     ->required(),
