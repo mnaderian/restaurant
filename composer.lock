@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "749a662a4db6478792f6efc54347a99f",
+    "content-hash": "6857b597caa43f94478e89186d7b438b",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -8904,6 +8904,82 @@
                 }
             ],
             "time": "2025-08-08T12:00:00+00:00"
+        },
+        {
+            "name": "glasscode/persian-faker",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/milad-abdi/persian-faker.git",
+                "reference": "1db49708a52efc1f133421090e5c56cc3c202842"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/milad-abdi/persian-faker/zipball/1db49708a52efc1f133421090e5c56cc3c202842",
+                "reference": "1db49708a52efc1f133421090e5c56cc3c202842",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.1",
+                "spatie/laravel-package-tools": "^1.14.0"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.0",
+                "nunomaduro/collision": "^6.0",
+                "nunomaduro/larastan": "^2.0.1",
+                "orchestra/testbench": "v8.0.11",
+                "pestphp/pest": "^1.21",
+                "pestphp/pest-plugin-laravel": "^1.1",
+                "phpstan/extension-installer": "^1.1",
+                "phpstan/phpstan-deprecation-rules": "^1.0",
+                "phpstan/phpstan-phpunit": "^1.0",
+                "phpunit/phpunit": "^9.5",
+                "spatie/laravel-ray": "^1.26"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": {
+                        "PersianFaker": "GlassCode\\PersianFaker\\Facades\\PersianFaker"
+                    },
+                    "providers": [
+                        "GlassCode\\PersianFaker\\PersianFakerServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GlassCode\\PersianFaker\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "milad abdi",
+                    "email": "milad8742@gmail.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "mahdi mansouri",
+                    "email": "mahdi.msr4@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "generate any persian content for laravel community",
+            "homepage": "https://github.com/milad-abdi/persian-faker",
+            "keywords": [
+                "faker",
+                "laravel",
+                "persian-faker"
+            ],
+            "support": {
+                "issues": "https://github.com/milad-abdi/persian-faker/issues",
+                "source": "https://github.com/milad-abdi/persian-faker/tree/v.1.0.0"
+            },
+            "time": "2023-04-18T05:42:03+00:00"
         },
         {
             "name": "hamcrest/hamcrest-php",

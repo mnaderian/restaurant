@@ -2,9 +2,9 @@
 
 namespace Database\Factories;
 
+use GlassCode\PersianFaker\PersianFaker;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Str;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
@@ -24,7 +24,7 @@ class UserFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->name(),
+            'name' => $this->generateName(),
             'mobile' => '091' . fake()->randomNumber(8, true),
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
@@ -34,6 +34,16 @@ class UserFactory extends Factory
             // 'two_factor_recovery_codes' => Str::random(10),
             // 'two_factor_confirmed_at' => now(),
         ];
+    }
+
+    public function generateName()
+    {
+        $faker = PersianFaker::create();
+
+        $firstName = $faker->person()->name();
+        $lastName = $faker->person()->lastName();
+
+        return $firstName . ' ' . $lastName;
     }
 
     /**
@@ -57,4 +67,5 @@ class UserFactory extends Factory
             'two_factor_confirmed_at' => null,
         ]);
     }
+
 }

@@ -23,5 +23,7 @@ class UserSeeder extends Seeder
             'email' => 'naderian.mahdi@gmail.com',
             'is_admin' => true,
         ]);
+
+        User::factory(10)->create();
     }
 }
