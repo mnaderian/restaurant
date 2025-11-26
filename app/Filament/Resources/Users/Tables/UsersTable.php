@@ -16,28 +16,32 @@ class UsersTable
         return $table
             ->columns([
                 TextColumn::make('name')
+                    ->label('نام و نام خانوادگی')
                     ->searchable(),
                 TextColumn::make('mobile')
+                    ->label('شماره تلفن')
                     ->searchable(),
                 TextColumn::make('email')
-                    ->label('Email address')
+                    ->label('ایمیل')
                     ->searchable(),
-                TextColumn::make('email_verified_at')
-                    ->dateTime()
-                    ->sortable(),
-                TextColumn::make('two_factor_confirmed_at')
-                    ->dateTime()
-                    ->sortable(),
+                // TextColumn::make('email_verified_at')
+                //     ->dateTime()
+                //     ->sortable(),
+                // TextColumn::make('two_factor_confirmed_at')
+                //     ->dateTime()
+                //     ->sortable(),
                 IconColumn::make('is_admin')
+                    ->label('ادمین')
                     ->boolean(),
                 TextColumn::make('created_at')
+                    ->label('تاریخ ایجاد')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
-                TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                // TextColumn::make('updated_at')
+                //     ->dateTime()
+                //     ->sortable()
+                //     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //

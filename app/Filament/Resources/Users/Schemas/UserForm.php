@@ -15,23 +15,23 @@ class UserForm
         return $schema
             ->components([
                 TextInput::make('name')
+                    ->label('نام و نام خانوادگی')
                     ->required(),
                 TextInput::make('mobile')
+                    ->label('شماره تلفن')
                     ->required(),
                 TextInput::make('email')
-                    ->label('Email address')
+                    ->label('ایمیل')
                     ->email()
                     ->required(),
-                DateTimePicker::make('email_verified_at'),
+                DateTimePicker::make('email_verified_at')
+                    ->label('تاریخ تأیید ایمیل'),
                 TextInput::make('password')
+                    ->label('رمز عبور')
                     ->password()
                     ->required(),
-                Textarea::make('two_factor_secret')
-                    ->columnSpanFull(),
-                Textarea::make('two_factor_recovery_codes')
-                    ->columnSpanFull(),
-                DateTimePicker::make('two_factor_confirmed_at'),
                 Toggle::make('is_admin')
+                    ->label('ادمین')
                     ->required(),
             ]);
     }
