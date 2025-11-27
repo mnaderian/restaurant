@@ -17,35 +17,59 @@ class RestaurantsTable
         return $table
             ->columns([
                 TextColumn::make('name')
+                    ->label('نام رستوران')
                     ->searchable(),
                 TextColumn::make('food_type')
-                    ->searchable(),
+                    ->label('نوع غذا')
+                    ->searchable()
+                    ->toggleable(isToggledHiddenByDefault: false),
                 TextColumn::make('address')
-                    ->searchable(),
+                    ->label('آدرس')
+                    ->searchable()
+                    ->toggleable(isToggledHiddenByDefault: false),
                 IconColumn::make('external_environment')
-                    ->boolean(),
+                    ->label('محیط خارجی')
+                    ->boolean()
+                    ->toggleable(isToggledHiddenByDefault: true),
                 IconColumn::make('internal_environment')
-                    ->boolean(),
+                    ->label('محیط داخلی')
+                    ->boolean()
+                    ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('points')
+                    ->label('امتیازات')
                     ->numeric()
-                    ->sortable(),
-                ImageColumn::make('image'),
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: false),
+                ImageColumn::make('image')
+                    ->label('تصویر')
+                    ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('phone')
-                    ->searchable(),
+                    ->label('تلفن')
+                    ->searchable()
+                    ->toggleable(isToggledHiddenByDefault: false),
                 TextColumn::make('menu_id')
+                    ->label('منو')
                     ->numeric()
-                    ->sortable(),
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('user_id')
+                    ->label('مدیر رستوران')
                     ->numeric()
-                    ->sortable(),
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: false),
                 TextColumn::make('services')
-                    ->searchable(),
+                    ->label('خدمات')
+                    ->searchable()
+                    ->html()
+                    ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('created_at')
-                    ->dateTime()
+                    ->label('تاریخ ایجاد')
+                    ->jalaliDateTime('j F Y, H:i')
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('updated_at')
-                    ->dateTime()
+                    ->label('تاریخ بروزرسانی')
+                    ->jalaliDateTime('j F Y, H:i')
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
