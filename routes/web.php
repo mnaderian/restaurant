@@ -14,6 +14,7 @@ Route::prefix('restaurants')->controller(RestaurantController::class)->group(fun
     Route::get('/', 'index')->name('restaurants');
     Route::post('search', 'search')->name('search');
     Route::post('filter', 'filter')->name('filter');
+    Route::get('{restaurant}/details', 'show')->name('show');
 });
 
 Route::view('dashboard', 'dashboard')

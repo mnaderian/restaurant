@@ -26,6 +26,7 @@
                     points="{{ $restaurant->points }}"
                     image="{{ $restaurant->image }}"
                     foodType="{{ $restaurant->food_type }}"
+                    url="{{ route('show', $restaurant) }}"
                 />
             @endforeach
         </div>

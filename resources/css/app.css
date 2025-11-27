@@ -112,6 +112,10 @@
     .submit {
         @apply bg-red-700 text-white rounded-xl font-medium py-1 px-3 mr-5 hover:bg-red-600;
     }
+
+    .services ul li {
+        list-style: circle;
+    }
 }
 
 [data-flux-field]:not(ui-radio, ui-checkbox) {

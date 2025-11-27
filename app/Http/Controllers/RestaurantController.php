@@ -77,7 +77,9 @@ class RestaurantController extends Controller
      */
     public function show(Restaurant $restaurant)
     {
-        //
+        return view('restaurant-details', [
+            'restaurant' => $restaurant
+        ]);
     }
 
     /**
