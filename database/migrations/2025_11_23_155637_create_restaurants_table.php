@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\FoodType;
 use App\Models\Menu;
 use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
@@ -16,7 +17,7 @@ return new class extends Migration
         Schema::create('restaurants', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('food_type')->default('ایرانی');
+            $table->enum('food_type', FoodType::cases())->default(FoodType::IRANIAN);
             $table->string('address')->nullable();
             $table->boolean('external_environment')->default(false);
             $table->boolean('internal_environment')->default(true);

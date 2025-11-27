@@ -2,9 +2,11 @@
 
 namespace App\Filament\Resources\Restaurants\Schemas;
 
+use App\Enums\FoodType;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\RichEditor;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Schema;
 
@@ -17,10 +19,12 @@ class RestaurantForm
                 TextInput::make('name')
                     ->label('نام رستوران')
                     ->required(),
-                TextInput::make('food_type')
+                Select::make('food_type')
                     ->label('نوع غذا')
                     ->required()
-                    ->default('ایرانی'),
+                    ->options(FoodType::class)
+                    ->enum(FoodType::class)
+                    ->default(FoodType::IRANIAN),
                 TextInput::make('address')
                     ->label('آدرس'),
                 TextInput::make('phone')

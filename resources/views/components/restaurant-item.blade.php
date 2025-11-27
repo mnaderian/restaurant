@@ -3,7 +3,7 @@
     'address' => '',
     'points' => 1,
     'image' => Vite::asset('resources/img/sample.jpg'),
-    'foodType' => 'غذای ایرانی',
+    'foodType' => FoodType::IRANIAN,
     'tables' => 0,
     'url' => '#',
 ])
@@ -14,12 +14,12 @@
         @isset($foodType)
             <div class="absolute top-4 left-4">
                 <span class="
-                    @if ($foodType == 'فست فود')
+                    @if ($foodType == FoodType::FASTFOOD)
                         bg-red-600 text-white
                     @else
                         bg-amber-400 text-amber-900
                     @endif
-                    px-3 py-1 rounded-full text-sm font-medium">@if($foodType == 'ایرانی') غذای @endif {{ $foodType }}</span>
+                    px-3 py-1 rounded-full text-sm font-medium">@if($foodType == FoodType::IRANIAN) غذای @endif {{ $foodType }}</span>
             </div>
         @endisset
     </div>
@@ -40,7 +40,7 @@
         <div class="flex items-center justify-between">
             <span class="text-2xl font-bold text-green-500">{{ $tables }} میز</span>
             <a href="{{ $url }}"
-                class="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-4 py-2 rounded-full hover:shadow-lg transition-all">
+                class="bg-linear-to-r from-green-500 to-emerald-500 text-white px-4 py-2 rounded-full hover:shadow-lg transition-all">
                 رزرو میز
             </a>
         </div>

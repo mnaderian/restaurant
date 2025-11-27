@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Enums\FoodType;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -16,7 +16,7 @@ class RestaurantSeeder extends Seeder
 
         DB::table('restaurants')->insert([
             'name' => 'رستوران ارگ نو',
-            'food_type' => 'ایرانی',
+            'food_type' => FoodType::IRANIAN,
             'address' => 'اهواز، کیانپارس، خیابان 5 شرقی',
             'external_environment' => true,
             'internal_environment' => true,
@@ -29,7 +29,7 @@ class RestaurantSeeder extends Seeder
 
         DB::table('restaurants')->insert([
             'name' => 'رستوران پاپیون',
-            'food_type' => 'فست فود',
+            'food_type' => FOODTYPE::FASTFOOD,
             'address' => 'اهواز، زیتون کارمندی، خیابان پنجم',
             'external_environment' => false,
             'internal_environment' => true,
@@ -42,7 +42,7 @@ class RestaurantSeeder extends Seeder
 
         DB::table('restaurants')->insert([
             'name' => 'چلوکباب گلستان',
-            'food_type' => 'ایرانی',
+            'food_type' => FOODTYPE::IRANIAN,
             'address' => 'اهواز، گلستان، فاز 2',
             'external_environment' => true,
             'internal_environment' => true,
@@ -55,7 +55,7 @@ class RestaurantSeeder extends Seeder
 
         DB::table('restaurants')->insert([
             'name' => 'فست فود دلوین',
-            'food_type' => 'فست فود',
+            'food_type' => FOODTYPE::FASTFOOD,
             'address' => 'اهواز، نادری، نبش خیابان 18',
             'external_environment' => false,
             'internal_environment' => true,
@@ -68,7 +68,7 @@ class RestaurantSeeder extends Seeder
 
         DB::table('restaurants')->insert([
             'name' => 'رستوران سنتی کارون',
-            'food_type' => 'ایرانی',
+            'food_type' => FOODTYPE::IRANIAN,
             'address' => 'اهواز، کارون، بلوار اصلی',
             'external_environment' => true,
             'internal_environment' => true,
@@ -81,7 +81,7 @@ class RestaurantSeeder extends Seeder
 
         DB::table('restaurants')->insert([
             'name' => 'رستوران پارسه',
-            'food_type' => 'ایرانی',
+            'food_type' => FOODTYPE::IRANIAN,
             'address' => 'اهواز، کیانپارس، بلوار ساحلی',
             'external_environment' => true,
             'internal_environment' => true,
@@ -94,7 +94,7 @@ class RestaurantSeeder extends Seeder
 
         DB::table('restaurants')->insert([
             'name' => 'فست فود تامار',
-            'food_type' => 'فست فود',
+            'food_type' => FOODTYPE::FASTFOOD,
             'address' => 'اهواز، کوروش، خیابان سپهر',
             'external_environment' => false,
             'internal_environment' => true,
@@ -107,7 +107,7 @@ class RestaurantSeeder extends Seeder
 
         DB::table('restaurants')->insert([
             'name' => 'رستوران نخلستان',
-            'food_type' => 'ایرانی',
+            'food_type' => FOODTYPE::IRANIAN,
             'address' => 'اهواز، باهنر، روبروی پارک نخلستان',
             'external_environment' => true,
             'internal_environment' => true,
@@ -120,7 +120,7 @@ class RestaurantSeeder extends Seeder
 
         DB::table('restaurants')->insert([
             'name' => 'فست فود آرمن',
-            'food_type' => 'فست فود',
+            'food_type' => FOODTYPE::FASTFOOD,
             'address' => 'اهواز، لشکرآباد، خیابان اصلی',
             'external_environment' => true,
             'internal_environment' => false,
@@ -133,7 +133,7 @@ class RestaurantSeeder extends Seeder
 
         DB::table('restaurants')->insert([
             'name' => 'رستوران ارغوان',
-            'food_type' => 'ایرانی',
+            'food_type' => FOODTYPE::IRANIAN,
             'address' => 'اهواز، کیان آباد، خیابان 14 غربی',
             'external_environment' => false,
             'internal_environment' => true,
@@ -146,7 +146,7 @@ class RestaurantSeeder extends Seeder
 
         DB::table('restaurants')->insert([
             'name' => 'پیتزا اوستا',
-            'food_type' => 'فست فود',
+            'food_type' => FOODTYPE::FASTFOOD,
             'address' => 'اهواز، پردیس، خیابان فروردین',
             'external_environment' => false,
             'internal_environment' => true,
@@ -159,7 +159,7 @@ class RestaurantSeeder extends Seeder
 
         DB::table('restaurants')->insert([
             'name' => 'چلوکباب احسان',
-            'food_type' => 'ایرانی',
+            'food_type' => FOODTYPE::IRANIAN,
             'address' => 'اهواز، زیتون کارمندی، بلوار پاسداران',
             'external_environment' => true,
             'internal_environment' => true,
@@ -172,7 +172,7 @@ class RestaurantSeeder extends Seeder
 
         DB::table('restaurants')->insert([
             'name' => 'فست فود آریو',
-            'food_type' => 'فست فود',
+            'food_type' => FOODTYPE::FASTFOOD,
             'address' => 'اهواز، کیان آباد، خیابان 3 شرقی',
             'external_environment' => true,
             'internal_environment' => true,
@@ -185,7 +185,7 @@ class RestaurantSeeder extends Seeder
 
         DB::table('restaurants')->insert([
             'name' => 'رستوران شب‌های کارون',
-            'food_type' => 'ایرانی',
+            'food_type' => FOODTYPE::IRANIAN,
             'address' => 'اهواز، ساحلی شرقی، کنار رودخانه',
             'external_environment' => true,
             'internal_environment' => true,
@@ -198,7 +198,7 @@ class RestaurantSeeder extends Seeder
 
         DB::table('restaurants')->insert([
             'name' => 'پیتزا مدرن',
-            'food_type' => 'فست فود',
+            'food_type' => FOODTYPE::FASTFOOD,
             'address' => 'اهواز، فلکه ساعت، خیابان نواب',
             'external_environment' => false,
             'internal_environment' => true,
@@ -211,7 +211,7 @@ class RestaurantSeeder extends Seeder
 
         DB::table('restaurants')->insert([
             'name' => 'رستوران نکیسا',
-            'food_type' => 'ایرانی',
+            'food_type' => FOODTYPE::IRANIAN,
             'address' => 'اهواز، کیانپارس، خیابان 2 غربی',
             'external_environment' => false,
             'internal_environment' => true,
@@ -224,7 +224,7 @@ class RestaurantSeeder extends Seeder
 
         DB::table('restaurants')->insert([
             'name' => 'برگر لند اهواز',
-            'food_type' => 'فست فود',
+            'food_type' => FOODTYPE::FASTFOOD,
             'address' => 'اهواز، امانیه، خیابان پهلوان',
             'external_environment' => true,
             'internal_environment' => true,
@@ -237,7 +237,7 @@ class RestaurantSeeder extends Seeder
 
         DB::table('restaurants')->insert([
             'name' => 'چلوکباب رامین',
-            'food_type' => 'ایرانی',
+            'food_type' => FOODTYPE::IRANIAN,
             'address' => 'اهواز، پردیس، جنب مجتمع تجاری',
             'external_environment' => true,
             'internal_environment' => false,
@@ -250,7 +250,7 @@ class RestaurantSeeder extends Seeder
 
         DB::table('restaurants')->insert([
             'name' => 'فست فود سوپر استار',
-            'food_type' => 'فست فود',
+            'food_type' => FOODTYPE::FASTFOOD,
             'address' => 'اهواز، کورش، روبروی پارک',
             'external_environment' => false,
             'internal_environment' => true,
@@ -263,7 +263,7 @@ class RestaurantSeeder extends Seeder
 
         DB::table('restaurants')->insert([
             'name' => 'رستوران چاشت',
-            'food_type' => 'ایرانی',
+            'food_type' => FOODTYPE::IRANIAN,
             'address' => 'اهواز، کیانپارس، بلوار پهلوان',
             'external_environment' => true,
             'internal_environment' => true,
