@@ -36,18 +36,18 @@ class RestaurantForm
                 Toggle::make('internal_environment')
                     ->label('محیط داخلی')
                     ->required(),
+                TextInput::make('user_id')
+                    ->label('مدیر رستوران')
+                    ->numeric(),
+                TextInput::make('menu_id')
+                    ->label('منو')
+                    ->numeric(),
                 TextInput::make('points')
                     ->label('امتیازات')
                     ->disabled()
                     ->numeric()
                     ->default(0)
                     ->hiddenOn('create'),
-                TextInput::make('menu_id')
-                    ->label('منو')
-                    ->numeric(),
-                TextInput::make('user_id')
-                    ->label('مدیر رستوران')
-                    ->numeric(),
                 FileUpload::make('image')
                     ->label('تصویر')
                     ->image(),
