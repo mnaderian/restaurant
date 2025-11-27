@@ -13,7 +13,13 @@
         <img src="{{ $image }}" alt="Gourmet Burger" class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500" />
         @isset($foodType)
             <div class="absolute top-4 left-4">
-                <span class="bg-amber-400 text-white px-3 py-1 rounded-full text-sm font-medium">{{ $foodType }}</span>
+                <span class="
+                    @if ($foodType == 'فست فود')
+                        bg-red-600 text-white
+                    @else
+                        bg-amber-400 text-amber-900
+                    @endif
+                    px-3 py-1 rounded-full text-sm font-medium">@if($foodType == 'ایرانی') غذای @endif {{ $foodType }}</span>
             </div>
         @endisset
     </div>

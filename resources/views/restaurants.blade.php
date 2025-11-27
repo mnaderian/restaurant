@@ -25,6 +25,7 @@
                     address="{{ $restaurant->address }}"
                     points="{{ $restaurant->points }}"
                     image="{{ $restaurant->image }}"
+                    foodType="{{ $restaurant->food_type }}"
                 />
             @endforeach
         </div>
