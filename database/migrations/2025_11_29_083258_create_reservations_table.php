@@ -1,6 +1,8 @@
 <?php
 
 use App\Models\Restaurant;
+use App\Models\RestaurantTable;
+use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -12,11 +14,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('restaurant_tables', function (Blueprint $table) {
+        Schema::create('reservations', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(Restaurant::class);
-            $table->string('number')->default(0);
-            $table->integer('capacity')->default(2);
+            $table->foreignIdFor(RestaurantTable::class);
+            $table->foreignIdFor(User::class);
+            $table->dateTime('start_time');
+            $table->dateTime('end_time');
             $table->timestamps();
         });
     }
@@ -26,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('restaurant_tables');
+        Schema::dropIfExists('reservations');
     }
 };

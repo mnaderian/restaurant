@@ -27,6 +27,7 @@ return new class extends Migration
             $table->foreignIdFor(Menu::class)->nullable();
             $table->foreignIdFor(User::class)->nullable();
             $table->string('services')->nullable();
+            $table->boolean('active')->default(true);
             $table->timestamps();
         });
     }

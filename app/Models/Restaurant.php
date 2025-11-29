@@ -20,5 +20,6 @@ class Restaurant extends Model
         'image',
         'phone',
         'services',
+        'active',
     ];
 }

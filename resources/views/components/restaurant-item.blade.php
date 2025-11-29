@@ -1,3 +1,7 @@
+@php
+    use App\Enums\FoodType;
+@endphp
+
 @props([
     'name' => 'رستوران',
     'address' => '',
