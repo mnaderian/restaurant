@@ -19,6 +19,11 @@ class RestaurantsTable
                 TextColumn::make('name')
                     ->label('نام رستوران')
                     ->searchable(),
+                TextColumn::make('manager.name')
+                    ->label('مدیر رستوران')
+                    ->sortable()
+                    ->searchable()
+                    ->toggleable(isToggledHiddenByDefault: false),
                 TextColumn::make('food_type')
                     ->label('نوع غذا')
                     ->searchable()
@@ -52,11 +57,6 @@ class RestaurantsTable
                     ->numeric()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
-                TextColumn::make('user_id')
-                    ->label('مدیر رستوران')
-                    ->numeric()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: false),
                 TextColumn::make('services')
                     ->label('خدمات')
                     ->searchable()

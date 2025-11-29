@@ -16,6 +16,7 @@ class UserSeeder extends Seeder
         User::factory()->create([
             'name' => 'علی احمدی',
             'email' => 'ali.ahmadi@gmail.com',
+            'role' => UserRole::MANAGER,
         ]);
 
         User::factory()->create([
@@ -24,6 +25,6 @@ class UserSeeder extends Seeder
             'role' => UserRole::ADMIN,
         ]);
 
-        User::factory(10)->create();
+        User::factory(100)->create();
     }
 }
