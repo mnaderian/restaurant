@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Users\Tables;
 
+use App\Enums\UserRole;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
@@ -18,6 +19,9 @@ class UsersTable
                 TextColumn::make('name')
                     ->label('نام و نام خانوادگی')
                     ->searchable(),
+                TextColumn::make('role')
+                    ->state(fn ($record) => $record->role->label())
+                    ->label('نقش'),
                 TextColumn::make('mobile')
                     ->label('شماره تلفن')
                     ->searchable()

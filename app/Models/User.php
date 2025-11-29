@@ -4,9 +4,11 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 
+use App\Enums\UserRole;
 use Filament\Models\Contracts\FilamentUser;
 use Filament\Panel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Str;
@@ -51,7 +53,23 @@ class User extends Authenticatable implements FilamentUser
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'role' => UserRole::class,
         ];
+    }
+
+    public function isAdmin(): bool
+    {
+        return $this->role === UserRole::ADMIN;
+    }
+
+    public function isManager(): bool
+    {
+        return $this->role === UserRole::MANAGER;
+    }
+
+    public function isUser(): bool
+    {
+        return $this->role === UserRole::USER;
     }
 
     /**
@@ -69,9 +87,18 @@ class User extends Authenticatable implements FilamentUser
     public function canAccessPanel(Panel $panel): bool
     {
         if ($panel->getId() === 'admin') {
-            return $this->is_admin;
+            return $this->isAdmin();
+        }
+
+        if ($panel->getId() === 'manager') {
+            return $this->isManager();
         }
 
         return true;
+    }
+
+    public function restaurant(): Relation
+    {
+        return $this->belongsTo(Restaurant::class);
     }
 }
