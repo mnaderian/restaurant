@@ -15,6 +15,8 @@ class ReservationController extends Controller
 
     public function store(Restaurant $restaurant, StoreReservationRequest $request)
     {
+        dd($request);
+        
         $conflict = Reservation::where('restaurant_table_id', $request->restaurant_table_id)
             ->where(function ($q) use ($request) {
                 $start = $request->start_time;
