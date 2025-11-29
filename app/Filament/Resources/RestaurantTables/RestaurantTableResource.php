@@ -13,6 +13,7 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
 
 class RestaurantTableResource extends Resource
 {
@@ -50,5 +51,17 @@ class RestaurantTableResource extends Resource
             'create' => CreateRestaurantTable::route('/create'),
             'edit' => EditRestaurantTable::route('/{record}/edit'),
         ];
+    }
+
+    public static function getEloquentQuery(): Builder
+    {
+        $query = parent::getEloquentQuery();
+        $user = auth()->user;
+
+        if ($user->isManager()) {
+            return $query->where('restaurant_id', $user->restaurant_id);
+        }
+
+        return $query;
     }
 }
