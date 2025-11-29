@@ -6,7 +6,7 @@
     <main class="container mx-auto px-6 py-20">
         <!-- عنوان صفحه -->
         <div class="text-center max-w-3xl mx-auto mb-16">
-            <a href="{{ route('restaurants') }}"><h2 class="text-4xl font-extrabold mb-5">لیست رستوران ها</h2></a>
+            <a href="{{ route('restaurants.index') }}"><h2 class="text-4xl font-extrabold mb-5">لیست رستوران ها</h2></a>
             <p class="text-lg text-gray-400">در این بخش می توانید لیست رستوران ها را مشاهده و جستجو نمایید</p>
         </div>
 
@@ -26,7 +26,8 @@
                     points="{{ $restaurant->points }}"
                     image="{{ $restaurant->image }}"
                     foodType="{{ $restaurant->food_type }}"
-                    url="{{ route('show', $restaurant) }}"
+                    url="{{ route('restaurants.show', $restaurant) }}"
+                    tables="{{ $restaurant->tables->count() }}"
                 />
             @endforeach
         </div>

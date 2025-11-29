@@ -13,8 +13,9 @@ Route::view('/', 'home')->name('home');
 
 Route::prefix('restaurants')
     ->controller(RestaurantController::class)
+    ->name('restaurants.')
     ->group(function () {
-        Route::get('/', 'index')->name('restaurants');
+        Route::get('/', 'index')->name('index');
         Route::post('search', 'search')->name('search');
         Route::post('filter', 'filter')->name('filter');
         Route::get('{restaurant}/details', 'show')->name('show');

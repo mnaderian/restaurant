@@ -15,8 +15,9 @@ return new class extends Migration
         Schema::create('restaurant_tables', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(Restaurant::class);
-            $table->string('number')->default(0);
+            $table->string('title')->default(0);
             $table->integer('capacity')->default(2);
+            $table->boolean('active')->default(true);
             $table->timestamps();
         });
     }

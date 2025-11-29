@@ -3,12 +3,15 @@
 namespace App\Filament\Resources\Restaurants\Schemas;
 
 use App\Enums\FoodType;
+use App\Enums\UserRole;
+use App\Models\User;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Schema;
+use Illuminate\Database\Eloquent\Builder;
 
 class RestaurantForm
 {
@@ -36,9 +39,12 @@ class RestaurantForm
                 Toggle::make('internal_environment')
                     ->label('محیط داخلی')
                     ->required(),
-                TextInput::make('user_id')
+                Select::make('user_id')
                     ->label('مدیر رستوران')
-                    ->numeric(),
+                    ->options(
+                        User::where('role', UserRole::MANAGER)
+                            ->pluck('name', 'id'))
+                    ->searchable(),
                 TextInput::make('menu_id')
                     ->label('منو')
                     ->numeric(),

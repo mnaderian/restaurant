@@ -1,4 +1,4 @@
-<form class="flex gap-2 items-center" action="{{ route('filter') }}" method="POST">
+<form class="flex gap-2 items-center" action="{{ route('restaurants.filter') }}" method="POST">
     @csrf
     <label class="font-bold me-5">فیلتر: </label>
     <label for="points">امتیاز:</label>

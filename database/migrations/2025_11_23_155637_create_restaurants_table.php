@@ -24,8 +24,8 @@ return new class extends Migration
             $table->integer('points')->default(0);
             $table->string('image')->nullable();
             $table->string('phone')->nullable();
-            $table->foreignIdFor(Menu::class)->nullable();
             $table->foreignIdFor(User::class)->nullable();
+            $table->foreignIdFor(Menu::class)->nullable()->cascadeOnDelete();
             $table->string('services')->nullable();
             $table->boolean('active')->default(true);
             $table->timestamps();

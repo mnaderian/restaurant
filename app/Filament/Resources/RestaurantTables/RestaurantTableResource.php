@@ -56,7 +56,7 @@ class RestaurantTableResource extends Resource
     public static function getEloquentQuery(): Builder
     {
         $query = parent::getEloquentQuery();
-        $user = auth()->user;
+        $user = auth()->user();
 
         if ($user->isManager()) {
             return $query->where('restaurant_id', $user->restaurant_id);

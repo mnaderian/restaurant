@@ -21,7 +21,14 @@ class UserForm
                 Select::make('role')
                     ->label('نقش')
                     ->required()
-                    ->enum(UserRole::class),
+                    ->enum(UserRole::class)
+                    ->options(UserRole::class)
+                    ->afterStateUpdated(function ($state, $record) {
+                        if ($record) {
+                            $record->role = $state;
+                            $record->save();
+                        }
+                    }),
                 TextInput::make('mobile')
                     ->label('شماره تلفن')
                     ->required(),

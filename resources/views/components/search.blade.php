@@ -1,4 +1,4 @@
-<form action="{{ route('search') }}" method="POST" class="flex gap-2 items-center">
+<form action="{{ route('restaurants.search') }}" method="POST" class="flex gap-2 items-center">
     @csrf
     <label for="search" class="font-bold">جستجو: </label>
     <input type="text" name="keywords" id="search" class="input">

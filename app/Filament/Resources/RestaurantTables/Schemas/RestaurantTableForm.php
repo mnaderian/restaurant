@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\RestaurantTables\Schemas;
 
+use App\Models\Restaurant;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
@@ -16,10 +17,13 @@ class RestaurantTableForm
                     ->relationship('restaurant', 'name')
                     ->required()
                     ->label('رستوران')
+                    ->options(
+                        Restaurant::all()->pluck('name', 'id')
+                    )
                     ->searchable(),
-                TextInput::make('number')
+                TextInput::make('title')
                     ->required()
-                    ->label('شماره میز')
+                    ->label('عنوان')
                     ->default('0'),
                 TextInput::make('capacity')
                     ->required()

@@ -29,17 +29,13 @@ class UserFactory extends Factory
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
             'password' => static::$password ??= Hash::make('password'),
-            // 'remember_token' => Str::random(10),
-            // 'two_factor_secret' => Str::random(10),
-            // 'two_factor_recovery_codes' => Str::random(10),
-            // 'two_factor_confirmed_at' => now(),
         ];
     }
 
     public function generateName()
     {
         $faker = PersianFaker::create();
-
+        
         $firstName = $faker->person()->name();
         $lastName = $faker->person()->lastName();
 

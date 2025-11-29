@@ -18,9 +18,9 @@ class RestaurantTablesTable
                 TextColumn::make('restaurant.name')
                     ->sortable()
                     ->label('رستوران'),
-                TextColumn::make('number')
+                TextColumn::make('title')
                     ->searchable()
-                    ->label('شماره میز'),
+                    ->label('عنوان'),
                 TextColumn::make('capacity')
                     ->numeric()
                     ->sortable()
