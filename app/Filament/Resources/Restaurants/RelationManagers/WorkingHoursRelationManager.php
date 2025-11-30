@@ -49,9 +49,9 @@ class WorkingHoursRelationManager extends RelationManager
                     ->trueIcon(Heroicon::OutlinedFaceFrown)
                     ->falseIcon(Heroicon::OutlinedFaceSmile),
                 TextColumn::make('open_time')->label('شروع')
-                    ->jalaliDateTime('j F Y, H:i'),
+                    ->jalaliDateTime('H:i'),
                 TextColumn::make('close_time')->label('پایان')
-                    ->jalaliDateTime('j F Y, H:i'),
+                    ->jalaliDateTime('H:i'),
             ])
             ->headerActions([
                 CreateAction::make()

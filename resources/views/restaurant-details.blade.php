@@ -32,22 +32,45 @@
             </div>
         </div>
 
-        <x-restaurant-section title="ساعات کاری رستوران">
+        <x-restaurant-section title="ساعات کاری رستوران و تعطیلی‌ها">
             <x-slot:icon>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                 </svg>
             </x-slot:icon>
-            ساعات کاری رستوران
-        </x-restaurant-section>
+            <ul class="flex flex-col gap-y-3">
+                @foreach ($restaurant->workingHours()->get() as $workingHour)
+                    <li class="flex items-center gap-x-5">
+                        <span class="font-bold w-12 ml-2">{{ $workingHour->day }}:</span>
+                        <span class="w-24 
+                        @if ($workingHour->is_closed)
+                            bg-red-500
+                        @else
+                            bg-emerald-600
+                        @endif
+                        text-center rounded-full text-white text-sm font-semibold py-1.5 px-3">
+                            @if ($workingHour->is_closed)
+                                تعطیل
+                            @else
+                                غیرتعطیل
+                            @endif
+                        </span>
+                        @isset($workingHour->open_time)
+                            <span class="border bg-stone-50 rounded-full py-1.5 px-3 text-center text-sm font-medium">
+                                {{ $workingHour->open_time }}
+                            </span>
+                        @endisset
 
-        <x-restaurant-section title="روزهای تعطیل">
-            <x-slot:icon>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 9v6m-4.5 0V9M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                </svg>
-            </x-slot:icon>
-            روزهای تعطیلی رستوران
+                        @if (!$workingHour->is_closed) <span class="text-gray-500">الی</span> @endif
+
+                        @isset($workingHour->close_time)
+                            <span class="border bg-stone-50 rounded-full py-1.5 px-3 text-center text-sm font-medium">
+                                {{ $workingHour->close_time }}
+                            </span>
+                        @endisset
+                    </li>
+                @endforeach
+            </ul>
         </x-restaurant-section>
 
         <!-- خدمات -->
