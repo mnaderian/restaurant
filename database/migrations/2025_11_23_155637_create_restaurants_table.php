@@ -1,7 +1,7 @@
 <?php
 
 use App\Enums\FoodType;
-use App\Models\Menu;
+use App\Models\MenuItem;
 use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->string('phone')->nullable();
             $table->foreignIdFor(User::class)->nullable();
-            $table->foreignIdFor(Menu::class)->nullable()->cascadeOnDelete();
+            $table->foreignIdFor(MenuItem::class)->nullable()->cascadeOnDelete();
             $table->string('services')->nullable();
             $table->boolean('active')->default(true);
             $table->timestamps();

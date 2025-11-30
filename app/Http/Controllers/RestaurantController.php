@@ -78,7 +78,8 @@ class RestaurantController extends Controller
     public function show(Restaurant $restaurant)
     {
         return view('restaurant-details', [
-            'restaurant' => $restaurant
+            'restaurant' => $restaurant,
+            'menuItems' => $restaurant->menuItems()->get(),
         ]);
     }
 

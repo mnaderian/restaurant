@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\Relations\Relation;
 
 class Restaurant extends Model
 {
@@ -44,5 +43,10 @@ class Restaurant extends Model
     public function workingHours(): HasMany
     {
         return $this->hasMany(RestaurantWorkingHour::class);
+    }
+
+    public function menuItems(): HasMany
+    {
+        return $this->hasMany(MenuItem::class);
     }
 }
