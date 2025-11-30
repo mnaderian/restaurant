@@ -44,9 +44,6 @@ class RestaurantForm
                         User::where('role', UserRole::MANAGER)
                             ->pluck('name', 'id'))
                     ->searchable(),
-                TextInput::make('menu_id')
-                    ->label('منو')
-                    ->numeric(),
                 TextInput::make('points')
                     ->label('امتیازات')
                     ->disabled()

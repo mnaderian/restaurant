@@ -52,11 +52,6 @@ class RestaurantsTable
                     ->label('تلفن')
                     ->searchable()
                     ->toggleable(isToggledHiddenByDefault: false),
-                TextColumn::make('menu_id')
-                    ->label('منو')
-                    ->numeric()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('services')
                     ->label('خدمات')
                     ->searchable()
