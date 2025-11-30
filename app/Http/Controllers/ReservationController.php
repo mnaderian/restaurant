@@ -44,12 +44,18 @@ class ReservationController extends Controller
         ]);
 
         return redirect()
-            ->route('reservation.show', ['reservation' => $reservation, 'restaurant' => $restaurant])
+            ->route('reservation.show', [
+                'restaurant' => $restaurant,
+                'reservation' => $reservation,
+            ])
             ->with('success', 'رزرو با موفقیت ثبت شد.');
     }
 
-    public function show(Reservation $reservation)
+    public function show(Restaurant $restaurant, Reservation $reservation)
     {
-        return view('reservation-details', ['reservation' => $reservation]);
+        return view('reservation-details', [
+            'restaurant' => $restaurant,
+            'reservation' => $reservation,
+        ]);
     }
 }

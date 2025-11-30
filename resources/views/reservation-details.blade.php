@@ -11,25 +11,25 @@
                     <li class="flex items-center justify-between bg-white py-1 px-1 pr-5 rounded-full">
                         <span>نام رستوران:</span>
                         <span class="font-light bg-stone-200 rounded-full py-1 px-3 w-2/3 text-center">
-                            {{ $restaurant->name }}
+                            {{ $restaurant?->name }}
                         </span>
                     </li>
                     <li class="flex items-center justify-between bg-white py-1 px-1 pr-5 rounded-full">
                         <span>میز:</span>
                         <span class="font-light bg-stone-200 rounded-full py-1 px-3 w-2/3 text-center">
-                            {{ $reservation->table->title }}
+                            {{ $reservation?->restaurantTable?->title }}
                         </span>
                     </li>
                     <li class="flex items-center justify-between bg-white py-1 px-1 pr-5 rounded-full">
                         <span>از:</span>
                         <span class="font-light bg-stone-200 rounded-full py-1 px-3 w-2/3 text-center">
-                            {{ $reservation->start_time }}
+                            {{ $reservation?->start_time }}
                         </span>
                     </li>
                     <li class="flex items-center justify-between bg-white py-1 px-1 pr-5 rounded-full">
                         <span>الی:</span>
                         <span class="font-light bg-stone-200 rounded-full py-1 px-3 w-2/3 text-center">
-                            {{ $reservation->end_time }}
+                            {{ $reservation?->end_time }}
                         </span>
                     </li>
                     <li class="flex items-center justify-between bg-white py-1 px-1 pr-5 rounded-full">

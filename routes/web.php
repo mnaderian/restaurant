@@ -21,14 +21,14 @@ Route::prefix('restaurants')
         Route::get('{restaurant}/details', 'show')->name('show');
 });
 
-Route::prefix('restaurant/{restaurant}/reserve')
+Route::prefix('restaurants/{restaurant}/reserve')
     ->middleware('auth')
     ->name('reservation.')
     ->controller(ReservationController::class)
     ->group(function () {
         Route::post('/', 'store')->name('store');
         Route::get('/', 'create')->name('create');
-        Route::get('details', 'show')->name('show');
+        Route::get('{reservation}/details', 'show')->name('show');
     });
 
 Route::view('dashboard', 'dashboard')
