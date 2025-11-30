@@ -30,18 +30,26 @@ class UserFactory extends Factory
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
             'password' => static::$password ??= Hash::make('password'),
-            'role' => array_rand([UserRole::USER, UserRole::MANAGER], 1),
+            'role' => $this->chooseRandomRole(),
         ];
     }
 
     public function generateName()
     {
         $faker = PersianFaker::create();
-        
+
         $firstName = $faker->person()->name();
         $lastName = $faker->person()->lastName();
 
         return $firstName . ' ' . $lastName;
+    }
+
+    public function chooseRandomRole(): UserRole
+    {
+        $roles = [UserRole::USER, UserRole::MANAGER];
+        $rand = array_rand($roles, 1);
+
+        return $roles[$rand];
     }
 
     /**

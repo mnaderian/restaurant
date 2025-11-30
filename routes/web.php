@@ -26,8 +26,8 @@ Route::prefix('restaurant/{restaurant}/reserve')
     ->name('reservation.')
     ->controller(ReservationController::class)
     ->group(function () {
-        Route::get('/', 'create')->name('create');
         Route::post('/', 'store')->name('store');
+        Route::get('/', 'create')->name('create');
         Route::get('details', 'show')->name('show');
     });
 
@@ -53,4 +53,4 @@ Route::middleware(['auth'])
                 ),
             )
             ->name('two-factor.show');
-    }); 
+    });

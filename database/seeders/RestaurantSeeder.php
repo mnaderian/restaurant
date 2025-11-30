@@ -21,7 +21,7 @@ class RestaurantSeeder extends Seeder
             'user_id' => User::inRandomOrder()
                 ->where('role', UserRole::MANAGER)
                 ->where('restaurant_id', null)
-                ->first(),
+                ->first()->id,
             'food_type' => FoodType::IRANIAN,
             'address' => 'اهواز، کیانپارس، خیابان 5 شرقی',
             'external_environment' => true,
@@ -38,7 +38,7 @@ class RestaurantSeeder extends Seeder
             'user_id' => User::inRandomOrder()
                 ->where('role', UserRole::MANAGER)
                 ->where('restaurant_id', null)
-                ->first(),
+                ->first()->id,
             'food_type' => FOODTYPE::FASTFOOD,
             'address' => 'اهواز، زیتون کارمندی، خیابان پنجم',
             'external_environment' => false,
@@ -55,7 +55,7 @@ class RestaurantSeeder extends Seeder
             'user_id' => User::inRandomOrder()
                 ->where('role', UserRole::MANAGER)
                 ->where('restaurant_id', null)
-                ->first(),
+                ->first()->id,
             'food_type' => FOODTYPE::IRANIAN,
             'address' => 'اهواز، گلستان، فاز 2',
             'external_environment' => true,
@@ -72,7 +72,7 @@ class RestaurantSeeder extends Seeder
             'user_id' => User::inRandomOrder()
                 ->where('role', UserRole::MANAGER)
                 ->where('restaurant_id', null)
-                ->first(),
+                ->first()->id,
             'food_type' => FOODTYPE::FASTFOOD,
             'address' => 'اهواز، نادری، نبش خیابان 18',
             'external_environment' => false,
@@ -89,7 +89,7 @@ class RestaurantSeeder extends Seeder
             'user_id' => User::inRandomOrder()
                 ->where('role', UserRole::MANAGER)
                 ->where('restaurant_id', null)
-                ->first(),
+                ->first()->id,
             'food_type' => FOODTYPE::IRANIAN,
             'address' => 'اهواز، کارون، بلوار اصلی',
             'external_environment' => true,
@@ -106,7 +106,7 @@ class RestaurantSeeder extends Seeder
             'user_id' => User::inRandomOrder()
                 ->where('role', UserRole::MANAGER)
                 ->where('restaurant_id', null)
-                ->first(),
+                ->first()->id,
             'food_type' => FOODTYPE::IRANIAN,
             'address' => 'اهواز، کیانپارس، بلوار ساحلی',
             'external_environment' => true,
@@ -123,7 +123,7 @@ class RestaurantSeeder extends Seeder
             'user_id' => User::inRandomOrder()
                 ->where('role', UserRole::MANAGER)
                 ->where('restaurant_id', null)
-                ->first(),
+                ->first()->id,
             'food_type' => FOODTYPE::FASTFOOD,
             'address' => 'اهواز، کوروش، خیابان سپهر',
             'external_environment' => false,
@@ -140,7 +140,7 @@ class RestaurantSeeder extends Seeder
             'user_id' => User::inRandomOrder()
                 ->where('role', UserRole::MANAGER)
                 ->where('restaurant_id', null)
-                ->first(),
+                ->first()->id,
             'food_type' => FOODTYPE::IRANIAN,
             'address' => 'اهواز، باهنر، روبروی پارک نخلستان',
             'external_environment' => true,
@@ -157,7 +157,7 @@ class RestaurantSeeder extends Seeder
             'user_id' => User::inRandomOrder()
                 ->where('role', UserRole::MANAGER)
                 ->where('restaurant_id', null)
-                ->first(),
+                ->first()->id,
             'food_type' => FOODTYPE::FASTFOOD,
             'address' => 'اهواز، لشکرآباد، خیابان اصلی',
             'external_environment' => true,
@@ -174,7 +174,7 @@ class RestaurantSeeder extends Seeder
             'user_id' => User::inRandomOrder()
                 ->where('role', UserRole::MANAGER)
                 ->where('restaurant_id', null)
-                ->first(),
+                ->first()->id,
             'food_type' => FOODTYPE::IRANIAN,
             'address' => 'اهواز، کیان آباد، خیابان 14 غربی',
             'external_environment' => false,
@@ -191,7 +191,7 @@ class RestaurantSeeder extends Seeder
             'user_id' => User::inRandomOrder()
                 ->where('role', UserRole::MANAGER)
                 ->where('restaurant_id', null)
-                ->first(),
+                ->first()->id,
             'food_type' => FOODTYPE::FASTFOOD,
             'address' => 'اهواز، پردیس، خیابان فروردین',
             'external_environment' => false,
@@ -208,7 +208,7 @@ class RestaurantSeeder extends Seeder
             'user_id' => User::inRandomOrder()
                 ->where('role', UserRole::MANAGER)
                 ->where('restaurant_id', null)
-                ->first(),
+                ->first()->id,
             'food_type' => FOODTYPE::IRANIAN,
             'address' => 'اهواز، زیتون کارمندی، بلوار پاسداران',
             'external_environment' => true,
@@ -225,7 +225,7 @@ class RestaurantSeeder extends Seeder
             'user_id' => User::inRandomOrder()
                 ->where('role', UserRole::MANAGER)
                 ->where('restaurant_id', null)
-                ->first(),
+                ->first()->id,
             'food_type' => FOODTYPE::FASTFOOD,
             'address' => 'اهواز، کیان آباد، خیابان 3 شرقی',
             'external_environment' => true,
@@ -242,7 +242,7 @@ class RestaurantSeeder extends Seeder
             'user_id' => User::inRandomOrder()
                 ->where('role', UserRole::MANAGER)
                 ->where('restaurant_id', null)
-                ->first(),
+                ->first()->id,
             'food_type' => FOODTYPE::IRANIAN,
             'address' => 'اهواز، ساحلی شرقی، کنار رودخانه',
             'external_environment' => true,
@@ -259,7 +259,7 @@ class RestaurantSeeder extends Seeder
             'user_id' => User::inRandomOrder()
                 ->where('role', UserRole::MANAGER)
                 ->where('restaurant_id', null)
-                ->first(),
+                ->first()->id,
             'food_type' => FOODTYPE::FASTFOOD,
             'address' => 'اهواز، فلکه ساعت، خیابان نواب',
             'external_environment' => false,
@@ -276,7 +276,7 @@ class RestaurantSeeder extends Seeder
             'user_id' => User::inRandomOrder()
                 ->where('role', UserRole::MANAGER)
                 ->where('restaurant_id', null)
-                ->first(),
+                ->first()->id,
             'food_type' => FOODTYPE::IRANIAN,
             'address' => 'اهواز، کیانپارس، خیابان 2 غربی',
             'external_environment' => false,
@@ -293,7 +293,7 @@ class RestaurantSeeder extends Seeder
             'user_id' => User::inRandomOrder()
                 ->where('role', UserRole::MANAGER)
                 ->where('restaurant_id', null)
-                ->first(),
+                ->first()->id,
             'food_type' => FOODTYPE::FASTFOOD,
             'address' => 'اهواز، امانیه، خیابان پهلوان',
             'external_environment' => true,
@@ -310,7 +310,7 @@ class RestaurantSeeder extends Seeder
             'user_id' => User::inRandomOrder()
                 ->where('role', UserRole::MANAGER)
                 ->where('restaurant_id', null)
-                ->first(),
+                ->first()->id,
             'food_type' => FOODTYPE::IRANIAN,
             'address' => 'اهواز، پردیس، جنب مجتمع تجاری',
             'external_environment' => true,
@@ -327,7 +327,7 @@ class RestaurantSeeder extends Seeder
             'user_id' => User::inRandomOrder()
                 ->where('role', UserRole::MANAGER)
                 ->where('restaurant_id', null)
-                ->first(),
+                ->first()->id,
             'food_type' => FOODTYPE::FASTFOOD,
             'address' => 'اهواز، کورش، روبروی پارک',
             'external_environment' => false,
@@ -344,7 +344,7 @@ class RestaurantSeeder extends Seeder
             'user_id' => User::inRandomOrder()
                 ->where('role', UserRole::MANAGER)
                 ->where('restaurant_id', null)
-                ->first(),
+                ->first()->id,
             'food_type' => FOODTYPE::IRANIAN,
             'address' => 'اهواز، کیانپارس، بلوار پهلوان',
             'external_environment' => true,

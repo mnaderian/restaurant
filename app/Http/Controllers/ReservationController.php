@@ -15,8 +15,6 @@ class ReservationController extends Controller
 
     public function store(Restaurant $restaurant, StoreReservationRequest $request)
     {
-        dd($request);
-        
         $conflict = Reservation::where('restaurant_table_id', $request->restaurant_table_id)
             ->where(function ($q) use ($request) {
                 $start = $request->start_time;
@@ -39,19 +37,19 @@ class ReservationController extends Controller
 
         $reservation = Reservation::create([
             'restaurant_id' => $restaurant->id,
-            'restaurant_table_id' => $request->table_id,
-            'user_id' => auth()->user,
+            'restaurant_table_id' => $request->restaurant_table_id,
+            'user_id' => auth()->user()->id,
             'start_time' => $request->start_time,
             'end_time' => $request->end_time,
         ]);
 
         return redirect()
-            ->route('reservation.show', $reservation)
+            ->route('reservation.show', ['reservation' => $reservation, 'restaurant' => $restaurant])
             ->with('success', 'رزرو با موفقیت ثبت شد.');
     }
 
     public function show(Reservation $reservation)
     {
-        return view('reservation-details', $reservation);
+        return view('reservation-details', ['reservation' => $reservation]);
     }
 }

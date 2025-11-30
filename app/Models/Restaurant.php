@@ -33,4 +33,9 @@ class Restaurant extends Model
     {
         return $this->hasMany(RestaurantTable::class);
     }
+
+    public function reservation(): Relation
+    {
+        return $this->hasMany(Reservation::class);
+    }
 }

@@ -4,7 +4,7 @@
 <h2 class="mt-24 text-center font-bold text-2xl">رزرو میز در {{ $restaurant->name }}</h2>
 
 @if ($errors->any())
-    <div class="alert alert-danger mt-8 mb-5">
+    <div class="alert alert-danger mt-8 mb-5 text-center text-red-600">
         {{ $errors->first() }}
     </div>
 @endif
