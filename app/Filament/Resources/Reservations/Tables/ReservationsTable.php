@@ -29,11 +29,13 @@ class ReservationsTable
                 TextColumn::make('start_time')
                     ->label('شروع')
                     ->dateTime()
-                    ->sortable(),
+                    ->sortable()
+                    ->searchable(),
                 TextColumn::make('end_time')
                     ->label('پایان')
                     ->dateTime()
-                    ->sortable(),
+                    ->sortable()
+                    ->searchable(),
                 TextColumn::make('created_at')
                     ->label('تاریخ ایجاد')
                     ->dateTime()
