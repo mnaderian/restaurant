@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Reservations\Schemas;
 
+use App\Enums\ReservationStatus;
 use App\Models\Restaurant;
 use App\Models\RestaurantTable;
 use App\Models\User;
@@ -48,6 +49,17 @@ class ReservationForm
                     ->label('پایان')
                     ->jalali()
                     ->required(),
+                Select::make('reservation_status')
+                    ->label('وضعیت')
+                    ->required()
+                    ->enum(ReservationStatus::class)
+                    ->options(ReservationStatus::class)
+                    ->afterStateUpdated(function ($state, $record) {
+                        if ($record) {
+                            $record->reservation_status = $state;
+                            $record->save();
+                        }
+                    }),
             ]);
     }
 }
