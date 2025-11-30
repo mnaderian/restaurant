@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\Relation;
 
 class Restaurant extends Model
@@ -24,22 +26,22 @@ class Restaurant extends Model
         'active',
     ];
 
-    public function manager(): Relation
+    public function manager(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
-    public function tables(): Relation
+    public function tables(): HasMany
     {
         return $this->hasMany(RestaurantTable::class);
     }
 
-    public function reservation(): Relation
+    public function reservation(): HasMany
     {
         return $this->hasMany(Reservation::class);
     }
 
-    public function workingHours(): Relation
+    public function workingHours(): HasMany
     {
         return $this->hasMany(RestaurantWorkingHour::class);
     }

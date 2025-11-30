@@ -48,8 +48,10 @@ class WorkingHoursRelationManager extends RelationManager
                     ->falseColor('success')
                     ->trueIcon(Heroicon::OutlinedFaceFrown)
                     ->falseIcon(Heroicon::OutlinedFaceSmile),
-                TextColumn::make('open_time')->label('شروع'),
-                TextColumn::make('close_time')->label('پایان'),
+                TextColumn::make('open_time')->label('شروع')
+                    ->jalaliDateTime('j F Y, H:i'),
+                TextColumn::make('close_time')->label('پایان')
+                    ->jalaliDateTime('j F Y, H:i'),
             ])
             ->headerActions([
                 CreateAction::make()
@@ -76,10 +78,12 @@ class WorkingHoursRelationManager extends RelationManager
                     ->reactive(),
                 TimePicker::make('open_time')
                     ->label('ساعت شروع')
+                    ->jalali()
                     ->visible(fn($get) => !$get('is_closed'))
                     ->required(fn($get) => !$get('is_closed')),
                 TimePicker::make('close_time')
                     ->label('ساعت پایان')
+                    ->jalali()
                     ->visible(fn($get) => !$get('is_closed'))
                     ->required(fn($get) => !$get('is_closed')),
             ]);

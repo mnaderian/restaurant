@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\Relation;
 
 class RestaurantWorkingHour extends Model
@@ -15,7 +16,7 @@ class RestaurantWorkingHour extends Model
         'is_closed',
     ];
 
-    public function restaurant(): Relation
+    public function restaurant(): BelongsTo
     {
         return $this->belongsTo(Restaurant::class);
     }
