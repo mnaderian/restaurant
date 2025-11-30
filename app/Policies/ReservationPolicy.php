@@ -15,9 +15,9 @@ class ReservationPolicy
         //
     }
 
-    public function create(User $user, Restaurant $restaurant)
+    public function create(User $user)
     {
-        return $restaurant->active;
+        return true;
     }
 
     /**
