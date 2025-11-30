@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\ReservationStatus;
 use App\Models\Restaurant;
 use App\Models\RestaurantTable;
 use App\Models\User;
@@ -21,6 +22,8 @@ return new class extends Migration
             $table->foreignIdFor(User::class);
             $table->dateTime('start_time');
             $table->dateTime('end_time');
+            $table->enum('reservation_status', ReservationStatus::cases())
+                ->default(ReservationStatus::PENDING_APPROVAL);
             $table->timestamps();
         });
     }

@@ -36,6 +36,11 @@ class ReservationsTable
                     ->jalaliDateTime('j F Y, H:i')
                     ->sortable()
                     ->searchable(),
+                TextColumn::make('reservation_status')
+                    ->state(fn ($record) => $record->reservation_status->label())
+                    ->label('وضعیت')
+                    ->sortable()
+                    ->searchable(),
                 TextColumn::make('created_at')
                     ->label('تاریخ ایجاد')
                     ->jalaliDateTime('j F Y, H:i')
