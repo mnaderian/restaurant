@@ -18,7 +18,7 @@ class ReservationsTable
                     ->label('رستوران')
                     ->sortable()
                     ->searchable(),
-                TextColumn::make('table.title')
+                TextColumn::make('restaurantTable.title')
                     ->label('میز')
                     ->sortable()
                     ->searchable(),
@@ -28,22 +28,22 @@ class ReservationsTable
                     ->searchable(),
                 TextColumn::make('start_time')
                     ->label('شروع')
-                    ->dateTime()
+                    ->jalaliDateTime('j F Y, H:i')
                     ->sortable()
                     ->searchable(),
                 TextColumn::make('end_time')
                     ->label('پایان')
-                    ->dateTime()
+                    ->jalaliDateTime('j F Y, H:i')
                     ->sortable()
                     ->searchable(),
                 TextColumn::make('created_at')
                     ->label('تاریخ ایجاد')
-                    ->dateTime()
+                    ->jalaliDateTime('j F Y, H:i')
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('updated_at')
                     ->label('تاریخ بروزرسانی')
-                    ->dateTime()
+                    ->jalaliDateTime('j F Y, H:i')
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
