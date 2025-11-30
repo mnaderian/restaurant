@@ -3,9 +3,11 @@
 namespace App\Filament\Resources\Users\Tables;
 
 use App\Enums\UserRole;
+use App\Models\Restaurant;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Forms\Components\Select;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
@@ -31,6 +33,9 @@ class UsersTable
                     ->label('ایمیل')
                     ->searchable()
                     ->toggleable(),
+                TextColumn::make('restaurant.name')
+                    ->label('رستوران')
+                    ->searchable(),
                 TextColumn::make('created_at')
                     ->label('تاریخ ایجاد')
                     ->jalaliDateTime('j F Y, H:i')

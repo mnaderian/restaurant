@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\Users\Schemas;
 
 use App\Enums\UserRole;
+use App\Models\Restaurant;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
@@ -36,6 +37,11 @@ class UserForm
                     ->label('ایمیل')
                     ->email()
                     ->required(),
+                Select::make('restaurant_id')
+                    ->relationship('restaurant', 'name')
+                    ->label('رستوران')
+                    ->options(Restaurant::whereNull('user_id')->pluck('name', 'id'))
+                    ->searchable(),
                 DateTimePicker::make('email_verified_at')
                     ->jalali()
                     ->label('تاریخ تأیید ایمیل'),
