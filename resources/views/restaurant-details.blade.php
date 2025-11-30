@@ -38,39 +38,43 @@
                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                 </svg>
             </x-slot:icon>
-            <ul class="flex flex-col gap-y-3">
-                @foreach ($restaurant->workingHours()->get() as $workingHour)
-                    <li class="flex items-center gap-x-5">
-                        <span class="font-bold w-12 ml-2">{{ $workingHour->day }}:</span>
-                        <span class="w-24 
-                        @if ($workingHour->is_closed)
-                            bg-red-500
-                        @else
-                            bg-emerald-600
-                        @endif
-                        text-center rounded-full text-white text-sm font-semibold py-1.5 px-3">
+            @if ($restaurant->workingHours->count() > 0)
+                <ul class="flex flex-col gap-y-3">
+                    @foreach ($restaurant->workingHours()->get() as $workingHour)
+                        <li class="flex items-center gap-x-5">
+                            <span class="font-bold w-12 ml-2">{{ $workingHour->day }}:</span>
+                            <span class="w-24 
                             @if ($workingHour->is_closed)
-                                تعطیل
+                                bg-red-500
                             @else
-                                غیرتعطیل
+                                bg-emerald-600
                             @endif
-                        </span>
-                        @isset($workingHour->open_time)
-                            <span class="border bg-stone-50 rounded-full py-1.5 px-3 text-center text-sm font-medium">
-                                {{ $workingHour->open_time }}
+                            text-center rounded-full text-white text-sm font-semibold py-1.5 px-3">
+                                @if ($workingHour->is_closed)
+                                    تعطیل
+                                @else
+                                    غیرتعطیل
+                                @endif
                             </span>
-                        @endisset
+                            @isset($workingHour->open_time)
+                                <span class="border bg-stone-50 rounded-full py-1.5 px-3 text-center text-sm font-medium">
+                                    {{ $workingHour->open_time }}
+                                </span>
+                            @endisset
 
-                        @if (!$workingHour->is_closed) <span class="text-gray-500">الی</span> @endif
+                            @if (!$workingHour->is_closed) <span class="text-gray-500">الی</span> @endif
 
-                        @isset($workingHour->close_time)
-                            <span class="border bg-stone-50 rounded-full py-1.5 px-3 text-center text-sm font-medium">
-                                {{ $workingHour->close_time }}
-                            </span>
-                        @endisset
-                    </li>
-                @endforeach
-            </ul>
+                            @isset($workingHour->close_time)
+                                <span class="border bg-stone-50 rounded-full py-1.5 px-3 text-center text-sm font-medium">
+                                    {{ $workingHour->close_time }}
+                                </span>
+                            @endisset
+                        </li>
+                    @endforeach
+                </ul>
+            @else
+                <p>هیچ ساعت کاری و یا تعطیلی برای رستوران ثبت نگردیده است!</p>    
+            @endif
         </x-restaurant-section>
 
         <!-- خدمات -->
@@ -85,6 +89,11 @@
                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
                 </svg>
             </x-slot:icon>
+            @if ($restaurant->menuItems->count() > 0)
+                
+            @else
+                <p>هنوز هیچ منویی برای این رستوران ثبت نشده است.</p>
+            @endif
         </x-restaurant-section>
     </main>
 @endsection

@@ -23,8 +23,10 @@ class MenuItemsTable
                     ->searchable(),
                 TextColumn::make('price')
                     ->label('قیمت')
-                    ->money()
-                    ->sortable(),
+                    ->sortable()
+                    ->formatStateUsing(
+                        fn ($state) => number_format($state) . ' تومان')
+                    ->searchable(),
                 ImageColumn::make('image')
                     ->label('عکس'),
                 TextColumn::make('created_at')
