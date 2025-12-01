@@ -33,7 +33,8 @@ class ManagerPanelProvider extends PanelProvider
             ])
             ->font('vazir', 
                 url: Vite::asset('resources/css/app.css'), 
-                provider: LocalFontProvider::class)
+                provider: LocalFontProvider::class
+            )
             ->discoverResources(in: app_path('Filament/Manager/Resources'), for: 'App\Filament\Manager\Resources')
             ->discoverPages(in: app_path('Filament/Manager/Pages'), for: 'App\Filament\Manager\Pages')
             ->pages([
