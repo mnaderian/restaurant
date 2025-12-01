@@ -2,6 +2,7 @@
 
 namespace App\Policies;
 
+use App\Enums\UserRole;
 use App\Models\Restaurant;
 use App\Models\User;
 
@@ -41,7 +42,11 @@ class ReservationPolicy
      */
     public function update(User $user): bool
     {
-        return true;
+        return match ($user->role) {
+            UserRole::USER => false,
+            UserRole::MANAGER => true,
+            UserRole::ADMIN => true,
+        };
     }
 
     /**
