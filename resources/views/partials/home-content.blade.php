@@ -11,8 +11,8 @@
                 <x-home.item>به رستوران محبوب خود امتیاز دهید.</x-home.item>
             </ul>
             <ul class="flex gap-3 text-sm leading-normal">
-                <li><x-home.button link="{{ route('login') }}" text="ورود کاربران" /></li>
-                <li><x-home.button link="/manager" text="ورود مدیران رستوران‌" class="bg-black! hover:bg-stone-700!" /></li>
+                <li><x-home.button link="{{ route('user-panel') }}" text="ورود کاربران" /></li>
+                <li><x-home.button link="{{ route('manager-panel') }}" text="ورود مدیران رستوران‌" class="bg-black! hover:bg-stone-700!" /></li>
             </ul>
         </div>
         <div class="relative bg-[#fff2f2] dark:bg-[#1D0002] lg:-ms-px -mb-px lg:mb-0 rounded-t-lg lg:rounded-t-none lg:rounded-e-lg! aspect-335/376 lg:aspect-auto w-full lg:w-[438px] shrink-0 overflow-hidden">
