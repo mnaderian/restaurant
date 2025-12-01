@@ -11,11 +11,11 @@
         </div>
 
         <!-- فرم جستجو -->
-        {{-- <div class="mb-12 bg-stone-100 w-full rounded-xl grid place-content-center py-3">
+        <div class="mb-12 bg-stone-100 w-full rounded-xl grid place-content-center py-3">
             <x-search />
             <hr class="my-3 border-dashed border border-stone-300" />
             <x-filter />
-        </div> --}}
+        </div>
 
         <!-- لیست رستوران ها -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-7 gap-y-10">
