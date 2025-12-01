@@ -14,6 +14,7 @@ class Reservation extends Model
         'user_id',
         'start_time',
         'end_time',
+        'guests_count'
     ];
 
     public function casts(): array

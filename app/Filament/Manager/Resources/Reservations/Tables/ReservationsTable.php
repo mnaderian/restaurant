@@ -2,6 +2,7 @@
 
 namespace App\Filament\Manager\Resources\Reservations\Tables;
 
+use App\Enums\ReservationStatus;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
@@ -26,6 +27,10 @@ class ReservationsTable
                     ->label('رزرو کننده')
                     ->sortable()
                     ->searchable(),
+                TextColumn::make('guests_count')
+                    ->label('تعداد نفرات')
+                    ->sortable()
+                    ->searchable(),
                 TextColumn::make('start_time')
                     ->label('شروع')
                     ->jalaliDateTime('j F Y, H:i')
@@ -40,6 +45,12 @@ class ReservationsTable
                     ->state(fn ($record) => $record->reservation_status->label())
                     ->label('وضعیت')
                     ->badge()
+                    ->color(fn (string $state): string => match ($state) {
+                        ReservationStatus::PENDING_APPROVAL->label() => 'danger',
+                        ReservationStatus::PENDING_PAYMENT->label() => 'warning',
+                        ReservationStatus::APPROVED->label() => 'success',
+                        ReservationStatus::CANCELLED->label() => 'gray',
+                    })
                     ->sortable()
                     ->searchable(),
                 TextColumn::make('created_at')

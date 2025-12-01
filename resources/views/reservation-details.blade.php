@@ -34,7 +34,7 @@
                     </li>
                     <li class="flex items-center justify-between bg-white py-1 px-1 pr-5 rounded-full">
                         <span>تعداد نفرات:</span>
-                        <span class="font-light bg-stone-200 rounded-full py-1 px-3 w-2/3 text-center">۳ نفر</span>
+                        <span class="font-light bg-stone-200 rounded-full py-1 px-3 w-2/3 text-center">{{ $reservation->guests_count }}</span>
                     </li>
                 </ul>
             </div>

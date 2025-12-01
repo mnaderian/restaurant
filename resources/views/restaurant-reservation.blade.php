@@ -32,6 +32,11 @@
             <input type="datetime-local" name="end_time" class="form-control" value="{{ old('end_time') }}">
         </div>
 
+        <div>
+            <label>تعداد نفرات:</label>
+            <input type="number" name="guests_count" class="form-control" value="{{ old('guests_count') ?? 1 }}">
+        </div>
+
         <div class="flex items-center mt-5">
             <button class="bg-green-700 text-white py-2 px-5 rounded-full w-32 mx-auto hover:bg-blue-700">رزرو</button>
             <a href="{{ route('restaurants.show', ['restaurant' => $restaurant]) }}" class=" bg-red-700 text-white py-2 px-5 rounded-full w-32 mx-auto hover:bg-white/0 hover:text-red-800 hover:border hover:border-red-700 text-center">لغو</a>

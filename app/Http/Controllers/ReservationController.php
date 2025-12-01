@@ -41,6 +41,7 @@ class ReservationController extends Controller
             'user_id' => auth()->user()->id,
             'start_time' => $request->start_time,
             'end_time' => $request->end_time,
+            'guests_count' => $request->guests_count,
         ]);
 
         return redirect()

@@ -7,8 +7,9 @@ use Illuminate\Contracts\Support\Htmlable;
 
 enum ReservationStatus: string implements HasLabel
 {
-    case PENDING_PAYMENT = 'pending_payment';
     case PENDING_APPROVAL = 'pending_approval';
+    case PENDING_PAYMENT = 'pending_payment';
+    case APPROVED = 'approved';
     case CANCELLED = 'cancelled';
 
     public function label(): string
@@ -16,6 +17,7 @@ enum ReservationStatus: string implements HasLabel
         return match ($this) {
             Self::PENDING_PAYMENT => 'در انتظار پرداخت',
             Self::PENDING_APPROVAL => 'در انتظار تأیید',
+            Self::APPROVED => 'تایید شده',
             Self::CANCELLED => 'لغو شده',
         };
     }
@@ -25,6 +27,7 @@ enum ReservationStatus: string implements HasLabel
         return match ($this) {
             Self::PENDING_PAYMENT => 'در انتظار پرداخت',
             Self::PENDING_APPROVAL => 'درانتظار تأیید',
+            Self::APPROVED => 'تایید شده',
             Self::CANCELLED => 'لغو شده',
         };
     }

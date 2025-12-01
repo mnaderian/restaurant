@@ -26,6 +26,10 @@ class ReservationsTable
                     ->label('رزرو کننده')
                     ->sortable()
                     ->searchable(),
+                TextColumn::make('guests_count')
+                    ->label('تعداد نفرات')
+                    ->sortable()
+                    ->searchable(),
                 TextColumn::make('start_time')
                     ->label('شروع')
                     ->jalaliDateTime('j F Y, H:i')

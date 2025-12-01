@@ -13,6 +13,7 @@ use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TextInput;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Schemas\Schema;
@@ -51,6 +52,11 @@ class ReservationsRelationManager extends RelationManager
                     ->label('میز')
                     ->relationship('restaurantTable', 'title')
                     ->required(),
+                TextInput::make('guests_count')
+                    ->label('تعداد نفرات')
+                    ->required()
+                    ->default(1)
+                    ->numeric(),
                 DateTimePicker::make('start_time')
                     ->label('شروع')
                     ->jalali()
@@ -70,6 +76,8 @@ class ReservationsRelationManager extends RelationManager
                     ->label('رستوران'),
                 TextEntry::make('restaurantTable.title')
                     ->label('میز'),
+                TextEntry::make('guests_count')
+                    ->label('تعداد نفرات'),
                 TextEntry::make('start_time')
                     ->label('شروع')
                     ->jalaliDateTime('j F Y, H:i'),
@@ -97,6 +105,10 @@ class ReservationsRelationManager extends RelationManager
                     ->searchable(),
                 TextColumn::make('restaurantTable.title')
                     ->label('میز')
+                    ->searchable(),
+                TextColumn::make('guests_count')
+                    ->label('تعداد نفرات')
+                    ->sortable()
                     ->searchable(),
                 TextColumn::make('start_time')
                     ->label('شروع')

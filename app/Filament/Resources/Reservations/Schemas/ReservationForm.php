@@ -8,6 +8,7 @@ use App\Models\RestaurantTable;
 use App\Models\User;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
 
 class ReservationForm
@@ -41,6 +42,11 @@ class ReservationForm
                     ->required()
                     ->options(User::pluck('name', 'id'))
                     ->searchable(),
+                TextInput::make('guests_count')
+                    ->label('تعداد نفرات')
+                    ->required()
+                    ->default(1)
+                    ->numeric(),
                 DateTimePicker::make('start_time')
                     ->label('شروع')
                     ->jalali()
