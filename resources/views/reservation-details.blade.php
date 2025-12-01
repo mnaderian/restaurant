@@ -4,7 +4,7 @@
 
 @section('content')
     <main>
-        <div class="mt-24 w-2/5 bg-gray-100 rounded-xl shadow-sm mx-auto p-7">
+        <div class="mt-24 w-full lg:w-2/5 bg-gray-100 rounded-xl shadow-sm mx-auto p-3 lg:p-7">
             <h3 class="text-center font-bold text-xl mb-5">جزئیات رزرو شما</h3>
             <div class="border-t border-stone-300 border-dashed p-5">
                 <ul class="space-y-3">
