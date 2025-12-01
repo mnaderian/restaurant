@@ -25,8 +25,7 @@ class RestaurantWorkingHourForm
                     ->label('روز هفته')
                     ->enum(WeekDay::class)
                     ->options(WeekDay::class)
-                    ->required()
-                    ->unique(ignoreRecord: true),
+                    ->required(),
                 Toggle::make('is_closed')
                     ->label('تعطیل')
                     ->columnSpan(2)

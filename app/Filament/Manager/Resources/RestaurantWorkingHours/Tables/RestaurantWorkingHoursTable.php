@@ -22,6 +22,15 @@ class RestaurantWorkingHoursTable
                 TextColumn::make('day')
                     ->label('روز')
                     ->searchable(),
+                TextColumn::make('is_closed')
+                    ->label('تعطیلی')
+                    ->formatStateUsing(fn ($state): string => 
+                        $state == true ? 'تعطیل' : 'غیرتعطیل')
+                    ->badge()
+                    ->color(fn ($state): string => match ($state) {
+                        1 => 'danger',
+                        0 => 'success',
+                    }),
                 TextColumn::make('open_time')
                     ->label('ساعت شروع')
                     ->jalaliDateTime('H:i')
@@ -30,13 +39,6 @@ class RestaurantWorkingHoursTable
                     ->label('ساعت پایان')
                     ->jalaliDateTime('H:i')
                     ->sortable(),
-                IconColumn::make('is_closed')
-                    ->label('تعطیل')
-                    ->boolean()
-                    ->trueColor('danger')
-                    ->falseColor('success')
-                    ->trueIcon(Heroicon::OutlinedFaceFrown)
-                    ->falseIcon(Heroicon::OutlinedFaceSmile),
                 TextColumn::make('created_at')
                     ->label('تاریخ ایجاد')
                     ->jalaliDateTime()
