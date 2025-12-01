@@ -22,7 +22,10 @@ class StoreReservationRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'restaurant_table_id' => [],
+            'start_time' => [],
+            'end_time' => [],
+            'guests_count' => [],
         ];
     }
 }
