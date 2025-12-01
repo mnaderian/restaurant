@@ -31,6 +31,8 @@ Route::prefix('restaurants/{restaurant}/reserve')
         Route::get('{reservation}/details', 'show')->name('show');
     });
 
+Route::redirect('/user-panel', '/user')->name('user-panel');
+
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
