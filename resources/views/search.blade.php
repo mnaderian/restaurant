@@ -31,6 +31,9 @@
                     address="{{ $restaurant->address }}"
                     points="{{ $restaurant->points }}"
                     image="{{ $restaurant->image }}"
+                    foodType="{{ $restaurant->food_type }}"
+                    url="{{ route('restaurants.show', $restaurant) }}"
+                    tables="{{ $restaurant->tables->count() }}"
                 />
             @endforeach
         </div>

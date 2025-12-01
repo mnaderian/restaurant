@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Filament\Resources\RestaurantTables;
+namespace App\Filament\Manager\Resources\RestaurantTables;
 
-use App\Filament\Resources\RestaurantTables\Pages\CreateRestaurantTable;
-use App\Filament\Resources\RestaurantTables\Pages\EditRestaurantTable;
-use App\Filament\Resources\RestaurantTables\Pages\ListRestaurantTables;
-use App\Filament\Resources\RestaurantTables\Schemas\RestaurantTableForm;
-use App\Filament\Resources\RestaurantTables\Tables\RestaurantTablesTable;
+use App\Filament\Manager\Resources\RestaurantTables\Pages\CreateRestaurantTable;
+use App\Filament\Manager\Resources\RestaurantTables\Pages\EditRestaurantTable;
+use App\Filament\Manager\Resources\RestaurantTables\Pages\ListRestaurantTables;
+use App\Filament\Manager\Resources\RestaurantTables\Schemas\RestaurantTableForm;
+use App\Filament\Manager\Resources\RestaurantTables\Tables\RestaurantTablesTable;
 use App\Models\RestaurantTable;
 use BackedEnum;
 use Filament\Resources\Resource;
@@ -55,13 +55,12 @@ class RestaurantTableResource extends Resource
 
     public static function getEloquentQuery(): Builder
     {
-        $query = parent::getEloquentQuery();
         $user = auth()->user();
 
-        if ($user->isManager()) {
-            return $query->where('restaurant_id', $user->restaurant_id);
-        }
-
-        return $query;
+        if (! $user->restaurant) {
+        return parent::getEloquentQuery()->whereNull('id');
+    }
+        return parent::getEloquentQuery()
+            ->where('restaurant_id', $user->restaurant->id);
     }
 }

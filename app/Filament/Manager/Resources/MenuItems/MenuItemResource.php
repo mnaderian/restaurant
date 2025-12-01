@@ -1,18 +1,19 @@
 <?php
 
-namespace App\Filament\Resources\MenuItems;
+namespace App\Filament\Manager\Resources\MenuItems;
 
-use App\Filament\Resources\MenuItems\Pages\CreateMenuItem;
-use App\Filament\Resources\MenuItems\Pages\EditMenuItem;
-use App\Filament\Resources\MenuItems\Pages\ListMenuItems;
-use App\Filament\Resources\MenuItems\Schemas\MenuItemForm;
-use App\Filament\Resources\MenuItems\Tables\MenuItemsTable;
+use App\Filament\Manager\Resources\MenuItems\Pages\CreateMenuItem;
+use App\Filament\Manager\Resources\MenuItems\Pages\EditMenuItem;
+use App\Filament\Manager\Resources\MenuItems\Pages\ListMenuItems;
+use App\Filament\Manager\Resources\MenuItems\Schemas\MenuItemForm;
+use App\Filament\Manager\Resources\MenuItems\Tables\MenuItemsTable;
 use App\Models\MenuItem;
 use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
 
 class MenuItemResource extends Resource
 {
@@ -24,7 +25,7 @@ class MenuItemResource extends Resource
 
     protected static ?string $modelLabel = 'آیتم منو';
 
-    protected static ?string $pluralModelLabel = 'آیتم‌های منوها';
+    protected static ?string $pluralModelLabel = 'آیتم‌های منو';
 
     public static function form(Schema $schema): Schema
     {
@@ -50,5 +51,12 @@ class MenuItemResource extends Resource
             'create' => CreateMenuItem::route('/create'),
             'edit' => EditMenuItem::route('/{record}/edit'),
         ];
+    }
+
+    public static function getEloquentQuery(): Builder
+    {
+        $user = auth()->user();
+        return parent::getEloquentQuery()
+            ->where('restaurant_id', $user->restaurant->id);
     }
 }

@@ -1,14 +1,15 @@
 <?php
 
-namespace App\Filament\Resources\Reservations\Tables;
+namespace App\Filament\Manager\Resources\MenuItems\Tables;
 
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
-class ReservationsTable
+class MenuItemsTable
 {
     public static function configure(Table $table): Table
     {
@@ -16,32 +17,17 @@ class ReservationsTable
             ->columns([
                 TextColumn::make('restaurant.name')
                     ->label('رستوران')
-                    ->sortable()
                     ->searchable(),
-                TextColumn::make('restaurantTable.title')
-                    ->label('میز')
-                    ->sortable()
+                TextColumn::make('name')
+                    ->label('نام غذا')
                     ->searchable(),
-                TextColumn::make('user.name')
-                    ->label('رزرو کننده')
-                    ->sortable()
-                    ->searchable(),
-                TextColumn::make('start_time')
-                    ->label('شروع')
-                    ->jalaliDateTime('j F Y, H:i')
-                    ->sortable()
-                    ->searchable(),
-                TextColumn::make('end_time')
-                    ->label('پایان')
-                    ->jalaliDateTime('j F Y, H:i')
-                    ->sortable()
-                    ->searchable(),
-                TextColumn::make('reservation_status')
-                    ->state(fn ($record) => $record->reservation_status->label())
-                    ->label('وضعیت')
-                    ->badge()
-                    ->sortable()
-                    ->searchable(),
+                TextColumn::make('price')
+                    ->label('قیمت')
+                    ->formatStateUsing(
+                        fn ($state) => number_format($state) . ' تومان')
+                    ->sortable(),
+                ImageColumn::make('image')
+                    ->label('عکس'),
                 TextColumn::make('created_at')
                     ->label('تاریخ ایجاد')
                     ->jalaliDateTime('j F Y, H:i')
