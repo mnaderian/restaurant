@@ -27,6 +27,7 @@ class ManagerPanelProvider extends PanelProvider
         return $panel
             ->id('manager')
             ->path('manager')
+            ->brandName('پنل مدیران رستوران')
             ->spa()
             ->colors([
                 'primary' => Color::Green,
