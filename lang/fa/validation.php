@@ -17,14 +17,14 @@ return [
     'accepted_if' => 'فیلد :attribute باید قبول شده باشد زمانی که مقدار :other برابر با :value باشد.',
     'active_url' => ':attribute لینک وارد شده معتبر نیست.',
     'after' => ':attribute تاریخ باید بعد از :date باشد',
-    'after_or_equal' => ':attribute تاریخ باید بعد یا مساوی با :date باشد.',
+    'after_or_equal' => ':attribute باید برابر با :date یا زمانی بعد از آن باشد',
     'alpha' => ':attribute فقط حروف مجاز است.',
     'alpha_dash' => ':attribute فقط حروف ، اعداد ، خط تیره مانند - و _ مجاز است',
     'alpha_num' => ':attribute فقط حروف و اعداد مجاز است..',
     'array' => ':attribute فقط آرایه مجاز است.',
     'ascii' => 'فیلد :attribute تنهای می‌تواند شامل اعداد، حروف و کاراکترهای تک بایتی باشد.',
     'before' => ':attribute باید تاریخ قبل از :date باشد.',
-    'before_or_equal' => ':attribute باید تاریخ قبل یا مساوی با :date باشد',
+    'before_or_equal' => ':attribute باید برابر با :date یا زمانی قبل از آن باشد',
     'between' => [
         'array' => ':attribute باید مابین :min و :max آیتم باشد.',
         'file' => ':attribute باید مابین :min و :max کیلوبایت باشد.',
@@ -160,7 +160,6 @@ return [
     'url' => 'فرمت :attribute قابل قبول نمیباشد.',
     'ulid' => ':attribute باید یک فرمت درست ULID باشد.',
     'uuid' => 'مقدار فیلد :attribute باید یک UUID معتبر باشد',
-
     /*
     |--------------------------------------------------------------------------
     | Custom Validation Language Lines
@@ -232,6 +231,10 @@ return [
         'body' => 'محتوا',
         'logo' => 'لوگو',
         'url' => 'آدرس',
+        'start_time' => 'زمان شروع',
+        'end_time' => 'زمان پایان',
+        'guests_count' => 'تعداد نفرات',
+        'restaurant_table_id' => 'میز انتخابی'
     ],
 
 ];

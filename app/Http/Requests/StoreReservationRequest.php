@@ -22,10 +22,10 @@ class StoreReservationRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'restaurant_table_id' => [],
-            'start_time' => [],
-            'end_time' => [],
-            'guests_count' => [],
+            'restaurant_table_id' => ['required', 'exists:restaurant_tables,id'],
+            'start_time' => ['required', 'date'],
+            'end_time' => ['required', 'date', 'after:start_time'],
+            'guests_count' => ['required', 'numeric:strict', 'min:1'],
         ];
     }
 }
