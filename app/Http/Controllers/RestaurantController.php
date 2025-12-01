@@ -79,7 +79,6 @@ class RestaurantController extends Controller
     {
         return view('restaurant-details', [
             'restaurant' => $restaurant,
-            'menuItems' => $restaurant->menuItems()->get(),
         ]);
     }
 
