@@ -10,9 +10,9 @@
                 <x-home.item>جستجوی رستوران ها با فیلتر دلخواه</x-home.item>
                 <x-home.item>به رستوران محبوب خود امتیاز دهید.</x-home.item>
             </ul>
-            <ul class="flex gap-3 text-sm leading-normal">
-                <li><x-home.button link="{{ route('user-panel') }}" text="ورود کاربران" /></li>
-                <li><x-home.button link="{{ route('manager-panel') }}" text="ورود مدیران رستوران‌" class="bg-black! hover:bg-stone-700!" /></li>
+            <ul class="flex flex-col sm:flex-row gap-3 text-sm leading-normal">
+                <li><x-home.button class="w-full sm:w-auto" link="{{ route('user-panel') }}" text="ورود کاربران" /></li>
+                <li><x-home.button link="{{ route('manager-panel') }}" text="ورود مدیران رستوران‌" class="bg-black! hover:bg-stone-700! w-full sm:w-auto" /></li>
             </ul>
         </div>
         <div class="relative bg-[#fff2f2] dark:bg-[#1D0002] lg:-ms-px -mb-px lg:mb-0 rounded-t-lg lg:rounded-t-none lg:rounded-e-lg! aspect-335/376 lg:aspect-auto w-full lg:w-[438px] shrink-0 overflow-hidden">
