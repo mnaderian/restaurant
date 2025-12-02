@@ -23,7 +23,7 @@ class ReservationsTable
                     ->sortable()
                     ->searchable(),
                 TextColumn::make('restaurantTable.title')
-                     ->label('میز')
+                    ->label('میز')
                     ->sortable()
                     ->searchable(),
                 TextColumn::make('user.name')
@@ -45,10 +45,10 @@ class ReservationsTable
                     ->sortable()
                     ->searchable(),
                 TextColumn::make('reservation_status')
-                    ->state(fn ($record) => $record->reservation_status->label())
+                    ->state(fn($record) => $record->reservation_status->label())
                     ->label('وضعیت')
                     ->badge()
-                    ->color(fn (string $state): string => match ($state) {
+                    ->color(fn(string $state): string => match ($state) {
                         ReservationStatus::PENDING_APPROVAL->label() => 'danger',
                         ReservationStatus::PENDING_PAYMENT->label() => 'warning',
                         ReservationStatus::APPROVED->label() => 'success',
@@ -82,6 +82,7 @@ class ReservationsTable
                     ->modalSubmitActionLabel('بله، لغو کن')
                     ->modalCancelActionLabel('خیر')
                     ->button()
+                    ->visible(fn($record) => $record->reservation_status != ReservationStatus::CANCELLED)
                     ->action(function ($record) {
                         $record->reservation_status = ReservationStatus::CANCELLED;
                         $record->save();

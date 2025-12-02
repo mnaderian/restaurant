@@ -57,8 +57,8 @@ class ReservationForm
                     ->required(),
                 Select::make('reservation_status')
                     ->label('وضعیت')
-                    ->required()
                     ->options(ReservationStatus::class)
+                    ->default(ReservationStatus::PENDING_APPROVAL)
                     ->disabled(),
             ]);
     }
