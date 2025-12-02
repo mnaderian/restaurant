@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Output\OutputInterface;
+use ZipArchive;
 
 class CompressChanges extends Command
 {
@@ -27,18 +28,48 @@ class CompressChanges extends Command
     public function handle()
     {
         $from = $this->argument('from');
+        is_null($from) ?? $from = '';
 
-        if (is_null($from))
-            $from = '';
+        // Get files list
+        $command = "git diff --name-only $from";
+        $list = array_filter(array_map('trim', explode("\n", shell_exec($command))));
 
-        // Generate the zip file
-        exec("git diff-tree -r --name-only --no-commit-id $from HEAD > diff && more diff | zip -@ diff.zip && rm diff");
-
+        // Generate Zip file
+        $diff = "diff.zip";
+        $zip = new ZipArchive;
+        if ($zip->open($diff, ZipArchive::CREATE | ZipArchive::OVERWRITE) !== TRUE) {
+            die("Cannot create zip file\n");
+        }
+        foreach ($list as $item) {
+            if (file_exists($item)) {
+                $zip->addFile($item, $item);
+            }
+        }
+        $zip->close();
+        
         // Move zip file to Desktop
-        exec('mv diff.zip ~/Desktop/');
+        $this->moveToDesktop($diff);
 
-        $message = 'Changed files zipped and placed into your Desktop as diff.zip';
-
+        // Sending message
+        $message = "Changed files zipped and placed into your Desktop as $diff";
         $this->components->info($message, OutputInterface::OUTPUT_NORMAL);
+    }
+
+    public function getDesktopPath()
+    {
+        $desktop = getenv('HOME') . '/Desktop';
+
+        if (stripos(PHP_OS_FAMILY, 'Windows') !== false) {
+            $desktop = getenv('HOMEDRIVE') . getenv('HOMEPATH') . '\\Desktop';
+        }
+
+        return $desktop;
+    }
+
+    public function moveToDesktop($file)
+    {
+        $desktop = $this->getDesktopPath();
+        copy($file, $desktop . '/' . $file);
+        unlink($file);
     }
 }
