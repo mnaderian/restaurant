@@ -92,7 +92,11 @@
                 </svg>
             </x-slot:icon>
             @if ($restaurant->menuItems->count() > 0)
-                
+                <ul>
+                    @foreach ($restaurant->menuItems as $item)
+                        <x-food-item :food="$item" />
+                    @endforeach
+                </ul>
             @else
                 <p>هنوز هیچ منویی برای این رستوران ثبت نشده است.</p>
             @endif
