@@ -20,8 +20,8 @@ class UserSeeder extends Seeder
         ]);
 
         User::factory()->create([
-            'name' => 'مهدی نادریان',
-            'email' => 'naderian.mahdi@gmail.com',
+            'name' => 'ادمین',
+            'email' => 'admin@test',
             'role' => UserRole::ADMIN,
         ]);
 
